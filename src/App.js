@@ -768,8 +768,15 @@ const NAV=[{id:"dashboard",label:"Dashboard",icon:"◈"},{id:"pipeline",label:"P
 
 export default function App() {
   const [tab,setTab]=useState("dashboard");
-  const [deals,setDeals]=useState(INITIAL_DEALS);
-  const [clients,setClients]=useState(INITIAL_CLIENTS);
+  const [deals,setDeals]=useState(()=>{
+    try{const s=localStorage.getItem("deals");return s?JSON.parse(s):INITIAL_DEALS;}catch{return INITIAL_DEALS;}
+  });
+  const [clients,setClients]=useState(()=>{
+    try{const s=localStorage.getItem("clients");return s?JSON.parse(s):INITIAL_CLIENTS;}catch{return INITIAL_CLIENTS;}
+  });
+
+  useEffect(()=>{localStorage.setItem("deals",JSON.stringify(deals));},[deals]);
+  useEffect(()=>{localStorage.setItem("clients",JSON.stringify(clients));},[clients]);
   const todayLabel=new Date().toLocaleDateString("es-CL",{weekday:"long",day:"numeric",month:"long"});
   return (
     <div style={{fontFamily:"'DM Sans','Helvetica Neue',sans-serif",background:C.bg,minHeight:"100vh",color:C.text}}>
