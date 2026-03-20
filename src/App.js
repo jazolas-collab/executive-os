@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import CALENDAR_EVENTS_JSON from "./data/calendar.json";
 
 // ─── THEME ──────────────────────────────────────────────────────────
 const C = {
@@ -12,20 +13,20 @@ const C = {
   blue:"#3b82f6",blueBg:"#3b82f618",
   purple:"#8b5cf6",purpleBg:"#8b5cf618",
 };
-const STAGE_COLOR = {SQL:C.blue,Opportunity:C.warn,Closing:C.success};
-const STAGE_BG    = {SQL:C.blueBg,Opportunity:C.warnBg,Closing:C.successBg};
+const STAGE_COLOR = {SQL:C.blue,Opportunity:C.warn,Closing:C.success,"Cliente Activo":C.purple,"Partnership & Otros":C.accent};
+const STAGE_BG    = {SQL:C.blueBg,Opportunity:C.warnBg,Closing:C.successBg,"Cliente Activo":C.purpleBg,"Partnership & Otros":C.accentBg};
 const PRIORITY_ORDER = {Alta:0,Media:1,Baja:2};
 const PRIORITY_COLOR = {Alta:C.danger,Media:C.warn,Baja:C.success};
 const PRIORITY_BG    = {Alta:C.dangerBg,Media:C.warnBg,Baja:C.successBg};
 const SOURCE_ICON    = {email:"✉",whatsapp:"💬",llamada:"📞",manual:"✏️",reunion:"🤝"};
-const STAGES = ["SQL","Opportunity","Closing"];
+const STAGES = ["SQL","Opportunity","Closing","Cliente Activo","Partnership & Otros"];
 
 // ─── DEALS DATA ───────────────────────────────────────────────────────
 const INITIAL_DEALS = [
   {id:"57829895285",clientName:"CVDCH",         name:"Eliminar Webpay para Talleres",          value:0,      stage:"SQL",        closedate:"2026-05-08",currency:"USD"},
   {id:"57565295782",clientName:"eClass",        name:"Renovación plataforma e-learning",       value:79237,  stage:"SQL",        closedate:"2026-04-30",currency:"USD"},
   {id:"56645062937",clientName:"INACAP",        name:"Integración sistema académico",          value:291602, stage:"SQL",        closedate:"2026-07-16",currency:"USD"},
-  {id:"56427453851",clientName:"Iplacex",       name:"Iplacex | Bettersoft",                  value:0,      stage:"SQL",        closedate:"2026-04-17",currency:"USD"},
+  {id:"56427453851",clientName:"Iplacex",       name:"Iplacex | Bettersoft",                  value:0,      stage:"Partnership & Otros",closedate:"2026-04-17",currency:"USD"},
   {id:"56045038894",clientName:"INAF",          name:"Licencias plataforma 2026",             value:22080,  stage:"SQL",        closedate:"2026-04-30",currency:"USD"},
   {id:"55063177506",clientName:"U. Adventista", name:"Universidad Adventista de Chile",        value:108417, stage:"SQL",        closedate:"2026-04-30",currency:"USD"},
   {id:"54970719106",clientName:"UAI",           name:"Expansión módulo financiero",           value:541106, stage:"SQL",        closedate:"2026-06-30",currency:"USD"},
@@ -33,13 +34,74 @@ const INITIAL_DEALS = [
   {id:"35360869551",clientName:"PdV PRM",       name:"Preuniversitario Pedro de Valdivia PRM",value:489880, stage:"SQL",        closedate:"2026-07-31",currency:"USD"},
   {id:"41693726979",clientName:"U. del Alba",   name:"Universidad del Alba",                  value:147360, stage:"Opportunity",closedate:"2026-04-30",currency:"USD"},
   {id:"35835601316",clientName:"IPP",           name:"Instituto Profesional IPP",             value:110343, stage:"Opportunity",closedate:"2026-03-31",currency:"USD"},
-  {id:"57392282457",clientName:"IPG",           name:"IPG - TNE",                             value:1530,   stage:"Closing",    closedate:"2026-03-20",currency:"USD"},
+  {id:"57392282457",clientName:"IPG",           name:"IPG - TNE",                             value:1530,   stage:"Cliente Activo",closedate:"2026-03-20",currency:"USD"},
   {id:"56920380426",clientName:"UVM",           name:"Universidad Viña del Mar - PRM 2026",   value:52906,  stage:"Closing",    closedate:"2026-03-31",currency:"USD"},
-  {id:"53858328868",clientName:"IPSS",          name:"Instituto Profesional San Sebastián",   value:10439,  stage:"Closing",    closedate:"2026-01-28",currency:"USD"},
+  {id:"53858328868",clientName:"IPSS",          name:"Instituto Profesional San Sebastián",   value:10439,  stage:"Cliente Activo",closedate:"2026-01-28",currency:"USD"},
   {id:"48177392163",clientName:"DS Chillán",    name:"DS Chillán",                            value:26492,  stage:"Closing",    closedate:"2026-05-31",currency:"USD"},
-  {id:"41538242568",clientName:"IPSS CIISA",    name:"Instituto Profesional San Sebastián (CIISA)",value:16070,stage:"Closing", closedate:"2026-01-07",currency:"USD"},
-  {id:"32300592005",clientName:"U. Magallanes", name:"Universidad de Magallanes",             value:61747,  stage:"Closing",    closedate:"2026-02-06",currency:"USD"},
+  {id:"41538242568",clientName:"IPSS CIISA",    name:"Instituto Profesional San Sebastián (CIISA)",value:16070,stage:"Cliente Activo",closedate:"2026-01-07",currency:"USD"},
+  {id:"32300592005",clientName:"U. Magallanes", name:"Universidad de Magallanes",             value:61747,  stage:"Cliente Activo",closedate:"2026-02-06",currency:"USD"},
 ];
+
+// ─── HUBSPOT EXTRAS (contacts + org IDs per client) ──────────────────
+const CLIENT_EXTRAS = {
+  "57392282457": { id_organization:4204, hubspot_company_id:"8386676385", contacts:[
+    {id:"23524484021",nombre:"Tomás Vergara Orellana",cargo:"Vicerrector de asuntos económicos y Adm.",telefono:"+56999696037",email:"tomas.vergara@ipg.cl",nivel_cargo:"N-1"},
+    {id:"1495651",nombre:"Juan Ramón Samaniego",cargo:"Vicerrector de asuntos económicos",telefono:"+56990798833",email:"juan.samaniego@ipg.cl",nivel_cargo:"N-1"},
+    {id:"1495551",nombre:"Noelia Moreno",cargo:"Vicerrectora academica - Planificación",telefono:"",email:"noelia.moreno@ipg.cl",nivel_cargo:"N-1"},
+    {id:"1495751",nombre:"Sandra Guzmán",cargo:"Directora General aseguramiento de calidad",telefono:"",email:"sandra.guzman@ipg.cl",nivel_cargo:"N-1"},
+    {id:"1495501",nombre:"Ricardo Sobarzo",cargo:"Rector",telefono:"",email:"ricardo.sobarzo@ipg.cl",nivel_cargo:"N"},
+    {id:"8901451",nombre:"Rosa Rios",cargo:"Jefa Administrativa",telefono:"(56) 264 690 987",email:"rosa.rios@ipg.cl",nivel_cargo:"N-4"},
+    {id:"8901401",nombre:"Ariela Garces",cargo:"Encargada de Tesorería",telefono:"+56264690967",email:"ariela.garces@ipg.cl",nivel_cargo:"N-4"},
+    {id:"142075943564",nombre:"Juan Pablo Jaures",cargo:"Jefe cobranza y adm cartera",telefono:"+56978525907",email:"juanpablo.jaures@ipg.cl",nivel_cargo:"N-4"},
+  ]},
+  "53858328868": { id_organization:4093, hubspot_company_id:"49011639298", contacts:[] },
+  "41538242568": { id_organization:4061, hubspot_company_id:"8415130776", contacts:[
+    {id:"1528301",nombre:"Arturo Fuentes",cargo:"Rector",telefono:"+569 9882 9222",email:"afuentes@ciisa.cl",nivel_cargo:"N"},
+    {id:"106671632755",nombre:"Jorge Salinas",cargo:"Vicerrector de asuntos económicos",telefono:"+56998272361",email:"jorge.salinas@ipss.cl",nivel_cargo:"N-1"},
+    {id:"61419952432",nombre:"Álvaro Garrido Valenzuela",cargo:"Director de TI",telefono:"+56 9 96428566",email:"alvaro.garrido@ipss.cl",nivel_cargo:"N-1"},
+    {id:"61419951491",nombre:"Luz María Navarro Arnalot",cargo:"Directora de administración y finanzas",telefono:"",email:"luzmaria.navarro@ipss.cl",nivel_cargo:"N-1"},
+    {id:"1659351",nombre:"Eduardo Nuñez",cargo:"Director de Admin y Finanzas",telefono:"+56955168837",email:"enunez@ciisa.cl",nivel_cargo:"N-1"},
+    {id:"1528701",nombre:"Águeda Díaz",cargo:"Directora de Admin, Finanzas y RRHH",telefono:"",email:"adiaz@ciisa.cl",nivel_cargo:"N-1"},
+    {id:"1528601",nombre:"Alvaro Garrido",cargo:"Director de TI",telefono:"+569 9746 8801",email:"agarrido@ciisa.cl",nivel_cargo:"N-1"},
+    {id:"1528551",nombre:"David Reyes",cargo:"Vicerrector Académico",telefono:"",email:"dreyes@ciisa.cl",nivel_cargo:"N-1"},
+    {id:"1528501",nombre:"Nicole Patuelli",cargo:"Directora de admisión y comunicaciones",telefono:"",email:"npatuelli@ciisa.cl",nivel_cargo:"N-1"},
+    {id:"1528401",nombre:"Natalia Gajardo",cargo:"Directora de asuntos estudiantiles",telefono:"",email:"ngajardo@ciisa.cl",nivel_cargo:"N-1"},
+    {id:"1528351",nombre:"Milenka Brayovic",cargo:"Directora de aseguramiento de calidad",telefono:"",email:"mbrayovic@ciisa.cl",nivel_cargo:"N-1"},
+    {id:"1200962",nombre:"Leonel Vega Andrade",cargo:"Vicerrector de Comunicaciones, Admisión",telefono:"56 9 7765 9847",email:"leonel.vega@uss.cl",nivel_cargo:"N-1"},
+    {id:"138017610011",nombre:"Jose Luis Rodriguez",cargo:"Contabilidad",telefono:"+56 9 3643 8544",email:"jose.rodriguez@ipss.cl",nivel_cargo:"N-2"},
+    {id:"123725279334",nombre:"Ivette Monsalves",cargo:"Vicerrectora academica",telefono:"+56 9 9939 5852",email:"ivette.monsalves@uss.cl",nivel_cargo:"N-2"},
+    {id:"106671633275",nombre:"Greko Ordenes",cargo:"Jefe de proyecto",telefono:"",email:"greko.ordenes@ipss.cl",nivel_cargo:"N-2"},
+  ]},
+  "32300592005": { id_organization:4071, hubspot_company_id:"7978044755", contacts:[
+    {id:"80427908671",nombre:"José Maripani",cargo:"Rector",telefono:"+56612207161",email:"rectoria@umag.cl",nivel_cargo:"N"},
+    {id:"1336451",nombre:"Elizabeth Jeldres",cargo:"Vicerrectora de Administración y Finanzas",telefono:"+56961572059",email:"elizabeth.jeldres@umag.cl",nivel_cargo:"N-1"},
+    {id:"80427910686",nombre:"Fredy Cabezas",cargo:"Vicerrector Adm y Finanzas",telefono:"+56612207142",email:"secretaria.vraf@umag.cl",nivel_cargo:"N-1"},
+    {id:"146134363716",nombre:"José Canumán",cargo:"Director TI",telefono:"",email:"jose.canuman@umag.cl",nivel_cargo:"N-1"},
+    {id:"95288658840",nombre:"Claudio Osorio",cargo:"Director de Servicios Informáticos",telefono:"+56 9 8593 1759",email:"claudio.osorio@umag.cl",nivel_cargo:"N-1"},
+    {id:"81883905905",nombre:"Elizabeth Grez",cargo:"Directora de Rectoría",telefono:"",email:"direccion.rectoria@umag.cl",nivel_cargo:"N-1"},
+    {id:"7549951",nombre:"Belen Goic",cargo:"Directora de Gestión Financiera",telefono:"+56 9 8360 6999",email:"belen.goic@umag.cl",nivel_cargo:"N-2"},
+    {id:"10669101",nombre:"Sandra Clerc",cargo:"Jefe de Aranceles y Cobranza",telefono:"+56612207148",email:"sandra.clerc@umag.cl",nivel_cargo:"N-2"},
+    {id:"146134363912",nombre:"Ariel Santana",cargo:"Jefe Unidad TI",telefono:"",email:"ariel.santana@umag.cl",nivel_cargo:"N-2"},
+    {id:"93226771104",nombre:"Marcos Cardenas",cargo:"Jefe Fondo Solidario",telefono:"",email:"marcos.cardenas@umag.cl",nivel_cargo:"N-2"},
+    {id:"93226770774",nombre:"Ruben Contreras",cargo:"Jefe Cobranza",telefono:"",email:"ruben.contreras@umag.cl",nivel_cargo:"N-2"},
+    {id:"158437578354",nombre:"Lissette Haro",cargo:"Encargada Compras",telefono:"+56952359971",email:"lissette.haro@umag.cl",nivel_cargo:"N-2"},
+  ]},
+  "56427453851": { id_organization:1692, hubspot_company_id:"8366798194", contacts:[
+    {id:"1470801",nombre:"Gonzalo Tomarelli",cargo:"Rector",telefono:"+56 9 9079 3493",email:"gtomarelli@iplacex.cl",nivel_cargo:"N"},
+    {id:"1470951",nombre:"Loreto Orellana",cargo:"Vicerrectora económica",telefono:"+56 9 8888 1049",email:"lorellana@iplacex.cl",nivel_cargo:"N-1"},
+    {id:"1470851",nombre:"Roberto Barriga",cargo:"Vicerrector Academico",telefono:"+56 9 9089 8590",email:"rbarriga@iplacex.cl",nivel_cargo:"N-1"},
+    {id:"1607651",nombre:"Freddy Mora Godoy",cargo:"Director de Finanzas",telefono:"",email:"fmora@iplacex.cl",nivel_cargo:"N-1"},
+    {id:"96874414613",nombre:"Mario Encina",cargo:"Director Admisión y Marketing",telefono:"+56 9 8368 0473",email:"mencina@iplacex.cl",nivel_cargo:"N-3"},
+    {id:"173887133462",nombre:"Inñigo Palma",cargo:"Director de Recaudación y Cobranza",telefono:"+56945619928",email:"ipalma@iplacex.cl",nivel_cargo:"N-3"},
+    {id:"96873984918",nombre:"Bruno Baranda",cargo:"Jefe de desarrollos Matrículas",telefono:"",email:"baranda@iplacex.cl",nivel_cargo:"N-4"},
+    {id:"13499152",nombre:"Maricel Tapia Salgueiro",cargo:"Jefa de cuentas corrientes",telefono:"",email:"msalgueiro@iplacex.cl",nivel_cargo:"N-4"},
+    {id:"13499153",nombre:"Marcela Correa",cargo:"Jefa de matrículas",telefono:"+56 2 2728 9115",email:"mcorrea@iplacex.cl",nivel_cargo:"N-4"},
+    {id:"197509763419",nombre:"Alejandra Moraga Toledo",cargo:"Jefa de cobranza",telefono:"+56984200731",email:"amoraga@iplacex.cl",nivel_cargo:"N-4"},
+  ]},
+};
+
+// ─── CALENDAR EVENTS (from Google Calendar jazolas@trytoku.com) ────────
+const CALENDAR_EVENTS = CALENDAR_EVENTS_JSON;
 
 const INITIAL_CLIENTS = INITIAL_DEALS.map(d => ({
   id: d.id,
@@ -49,6 +111,11 @@ const INITIAL_CLIENTS = INITIAL_DEALS.map(d => ({
   dealId: d.id,
   dealStage: d.stage,
   dealValue: d.value,
+  ...(CLIENT_EXTRAS[d.id] ? {
+    id_organization: CLIENT_EXTRAS[d.id].id_organization,
+    hubspot_company_id: CLIENT_EXTRAS[d.id].hubspot_company_id,
+    contacts: CLIENT_EXTRAS[d.id].contacts,
+  } : {}),
   todos: (() => {
     const preset = {
       "57565295782": [
@@ -76,11 +143,6 @@ const INITIAL_CLIENTS = INITIAL_DEALS.map(d => ({
   })()
 }));
 
-const MEETINGS_RAW = [
-  {id:"74205185600",title:"Kickoff Aramark <> Toku",start:"2025-03-11T17:00:00Z",end:"2025-03-11T17:30:00Z",location:"Sala Valparaíso"},
-  {id:"74718195002",title:"Toku <> Yapo.cl | Semanal 12/03",start:"2025-03-12T14:15:00Z",end:"2025-03-12T14:45:00Z",location:""},
-  {id:"74440496395",title:"Quinta Casa <> Toku | Reunión Semanal",start:"2025-03-12T18:00:00Z",end:"2025-03-12T18:30:00Z",location:""},
-];
 
 // ─── HELPERS ────────────────────────────────────────────────────────
 const fmt = n => n ? "$"+Number(n).toLocaleString("es-CL") : "—";
@@ -96,13 +158,19 @@ function dateLabel(d) {
   if(!d) return null;
   if(isOverdue(d)) return {text:"Vencida",color:C.danger};
   if(isToday(d))   return {text:"Hoy",color:C.warn};
-  if(isSoon(d))    return {text:"Próxima",color:C.accent};
+  const diff=(new Date(d)-new Date(todayStr()))/86400000;
+  if(diff===1)     return {text:"Mañana",color:C.accent};
+  if(diff<=6) {
+    const wd=new Date(d+"T12:00:00").toLocaleDateString("es-CL",{weekday:"long"});
+    return {text:wd.charAt(0).toUpperCase()+wd.slice(1),color:C.accent};
+  }
   return {text:fmtDate(d),color:C.textMuted};
 }
 function isWorkdayOver() { const n=getNowCL(); return n.getHours()>18||(n.getHours()===18&&n.getMinutes()>=30); }
 function getCalendarDay() { return isWorkdayOver()?tomorrowStr():todayStr(); }
 function formatDayLabel(s) { const d=new Date(s+"T12:00:00"); return d.toLocaleDateString("es-CL",{weekday:"long",day:"numeric",month:"long"}); }
 function meetingDateStr(iso) { const d=new Date(new Date(iso).toLocaleString("en-US",{timeZone:"America/Santiago"})); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; }
+function meetingHour(iso) { const d=new Date(new Date(iso).toLocaleString("en-US",{timeZone:"America/Santiago"})); return d.getHours()+d.getMinutes()/60; }
 function closeDateUrgency(iso) {
   if(!iso) return null;
   const diff = (new Date(iso) - new Date()) / 86400000;
@@ -279,6 +347,15 @@ function SelectCell({value, options, onChange}) {
   return <select ref={ref} value={value} onChange={e=>{onChange(e.target.value);setEditing(false);}} onBlur={()=>setEditing(false)} style={{...iStyle,width:"auto",fontSize:12,padding:"3px 6px"}}>{options.map(o=><option key={o}>{o}</option>)}</select>;
 }
 
+// ─── PRIORITY CELL (inline editable badge) ───────────────────────────
+function PriorityCell({value,onChange}){
+  const [editing,setEditing]=useState(false);
+  const ref=useRef();
+  useEffect(()=>{if(editing&&ref.current)ref.current.focus();},[editing]);
+  if(!editing)return<span onClick={()=>setEditing(true)} title="Editar prioridad" style={{background:PRIORITY_BG[value],color:PRIORITY_COLOR[value],border:`1px solid ${PRIORITY_COLOR[value]}40`,borderRadius:4,padding:"2px 8px",fontSize:11,fontWeight:700,letterSpacing:.3,whiteSpace:"nowrap",cursor:"pointer"}}>{value}</span>;
+  return<select ref={ref} value={value} onChange={e=>{onChange(e.target.value);setEditing(false);}} onBlur={()=>setEditing(false)} style={{...iStyle,width:"auto",fontSize:11,padding:"2px 6px",fontWeight:700,color:PRIORITY_COLOR[value]}}>{["Alta","Media","Baja"].map(o=><option key={o}>{o}</option>)}</select>;
+}
+
 // ─── TODO ROW ────────────────────────────────────────────────────────
 function TodoRow({todo,clientId,idx,isDragging,isOver,onDragStart,onDragEnter,onDrop,onDragEnd,onToggle,onUpdate,onRemove,showClient}) {
   const [showNotes,setShowNotes]=useState(false);
@@ -437,13 +514,36 @@ function PipelineView({deals,setDeals,onBack}) {
   );
 }
 
+// ─── AUTO EMOJI ──────────────────────────────────────────────────────
+function guessEmoji(t){
+  const s=t.toLowerCase();
+  if(/informe|reporte|mensual|estadístic/.test(s))return"📈";
+  if(/reunión|reunion|semanal|checkin|check-in|workshop/.test(s))return"🤝";
+  if(/contrato|firma|firmar/.test(s))return"📝";
+  if(/demo|demostración/.test(s))return"🚀";
+  if(/llamad|llamar/.test(s))return"📞";
+  if(/email|correo|mail/.test(s))return"✉️";
+  if(/dato|alumn|data/.test(s))return"📊";
+  if(/revisar|revisión/.test(s))return"🔍";
+  if(/pago|factura|cobro|cobranza/.test(s))return"💰";
+  if(/integración|integracion|sistema|técnico/.test(s))return"🔗";
+  if(/validar|confirmar|verificar/.test(s))return"✅";
+  if(/propuesta|cotización|comercial/.test(s))return"💼";
+  if(/seguimiento/.test(s))return"🎯";
+  if(/preparar|preparación|consultoría/.test(s))return"📋";
+  if(/enviar|mandar/.test(s))return"📬";
+  if(/agendar|agenda/.test(s))return"📅";
+  if(/técnico|tecnolog/.test(s))return"💻";
+  return"📋";
+}
+
 // ─── CLIENTS VIEW ────────────────────────────────────────────────────
 function ClientsView({clients,setClients,deals,onBack}) {
   const [active,setActive]=useState(clients[0]?.id);
   const [showAdd,setShowAdd]=useState(false);
   const [showAddClient,setShowAddClient]=useState(false);
   const [search,setSearch]=useState("");
-  const [newTodo,setNewTodo]=useState({text:"",emoji:"📋",source:"manual",priority:"Alta",date:"",notes:""});
+  const [newTodo,setNewTodo]=useState({text:"",emoji:"📋",priority:"Alta",date:"",notes:""});
   const [newClient,setNewClient]=useState({name:"",contact:""});
 
   const client=clients.find(c=>c.id===active);
@@ -455,14 +555,14 @@ function ClientsView({clients,setClients,deals,onBack}) {
   const reorderTodos=(cid,from,to)   =>setClients(cs=>cs.map(c=>{if(c.id!==cid)return c;const a=[...c.todos];const[i]=a.splice(from,1);a.splice(to,0,i);return{...c,todos:a};}));
   const updateContact=(cid,val)      =>setClients(cs=>cs.map(c=>c.id===cid?{...c,contact:val}:c));
 
-  const addTodo=()=>{ if(!newTodo.text)return; setClients(cs=>cs.map(c=>c.id===active?{...c,todos:[...c.todos,{id:Date.now(),...newTodo,done:false}]}:c)); setNewTodo({text:"",emoji:"📋",source:"manual",priority:"Alta",date:"",notes:""}); setShowAdd(false); };
+  const addTodo=()=>{ if(!newTodo.text)return; setClients(cs=>cs.map(c=>c.id===active?{...c,todos:[...c.todos,{id:Date.now(),...newTodo,source:"manual",done:false,gcal_event_id:null}]}:c)); setNewTodo({text:"",emoji:"📋",priority:"Alta",date:"",notes:""}); setShowAdd(false); };
   const addClient=()=>{ if(!newClient.name)return; const nc={id:"custom-"+Date.now(),name:newClient.name,dealName:"",contact:newClient.contact,dealId:null,dealStage:null,dealValue:0,todos:[]}; setClients(cs=>[...cs,nc]); setActive(nc.id); setNewClient({name:"",contact:""}); setShowAddClient(false); };
 
   const filtered=clients.filter(c=>c.name.toLowerCase().includes(search.toLowerCase()));
   const sorted=[...client?.todos||[]].sort((a,b)=>{if(a.done!==b.done)return a.done?1:-1;const p=PRIORITY_ORDER[a.priority]-PRIORITY_ORDER[b.priority];return p!==0?p:(a.date||"9")<(b.date||"9")?-1:1;});
 
-  const groups = {SQL:[],Opportunity:[],Closing:[],Sin_etapa:[]};
-  filtered.forEach(c=>{ const s=c.dealStage; if(s&&groups[s]) groups[s].push(c); else groups["Sin_etapa"].push(c); });
+  const groups = {SQL:[],Opportunity:[],Closing:[],"Cliente Activo":[],"Partnership & Otros":[],Sin_etapa:[]};
+  filtered.forEach(c=>{ const s=c.dealStage; if(s&&groups[s]!==undefined) groups[s].push(c); else groups["Sin_etapa"].push(c); });
 
   return (
     <div>
@@ -542,9 +642,8 @@ function ClientsView({clients,setClients,deals,onBack}) {
                 <div style={{background:C.bg,border:`1px solid ${C.border}`,borderRadius:10,padding:16,marginBottom:16,display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
                   <div style={{gridColumn:"1/-1",display:"flex",gap:8,alignItems:"center"}}>
                     <EmojiPicker value={newTodo.emoji} onChange={v=>setNewTodo(f=>({...f,emoji:v}))} />
-                    <input value={newTodo.text} onChange={e=>setNewTodo(f=>({...f,text:e.target.value}))} placeholder="Describe la tarea..." style={{...iStyle,flex:1}} />
+                    <input value={newTodo.text} onChange={e=>{const txt=e.target.value;setNewTodo(f=>({...f,text:txt,emoji:guessEmoji(txt)}));}} placeholder="Describe la tarea..." style={{...iStyle,flex:1}} />
                   </div>
-                  <div><div style={{fontSize:11,color:C.textMuted,marginBottom:4}}>Fuente</div><select value={newTodo.source} onChange={e=>setNewTodo(f=>({...f,source:e.target.value}))} style={iStyle}>{["email","whatsapp","llamada","reunion","manual"].map(s=><option key={s}>{s}</option>)}</select></div>
                   <div><div style={{fontSize:11,color:C.textMuted,marginBottom:4}}>Prioridad</div><select value={newTodo.priority} onChange={e=>setNewTodo(f=>({...f,priority:e.target.value}))} style={iStyle}>{["Alta","Media","Baja"].map(p=><option key={p}>{p}</option>)}</select></div>
                   <div>
                     <div style={{fontSize:11,color:C.textMuted,marginBottom:4}}>Fecha límite</div>
@@ -555,6 +654,27 @@ function ClientsView({clients,setClients,deals,onBack}) {
               )}
               <DraggableTodoList todos={sorted} clientId={client.id} onToggle={toggleDone} onUpdate={updateTodo} onRemove={removeTodo} onReorder={reorderTodos} showClient={false} />
             </Card>
+
+            {client.contacts&&client.contacts.length>0&&(
+              <Card>
+                <SectionTitle>👤 Contactos HubSpot</SectionTitle>
+                <div style={{overflowX:"auto"}}>
+                  <div style={{display:"grid",gridTemplateColumns:"1.2fr 1.6fr 1.8fr 1.2fr 56px",gap:8,padding:"4px 8px 8px",borderBottom:`1px solid ${C.border}`,minWidth:560}}>
+                    {["Nombre","Cargo","Email","Teléfono","N"].map(h=><div key={h} style={{fontSize:10,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:.5}}>{h}</div>)}
+                  </div>
+                  {[...client.contacts].sort((a,b)=>{const o={N:0,"N-1":1,"N-2":2,"N-3":3,"N-4":4};return (o[a.nivel_cargo]??5)-(o[b.nivel_cargo]??5);}).map(ct=>(
+                    <div key={ct.id} style={{display:"grid",gridTemplateColumns:"1.2fr 1.6fr 1.8fr 1.2fr 56px",gap:8,padding:"7px 8px",borderRadius:6,alignItems:"center",minWidth:560,transition:"background .1s"}} onMouseEnter={e=>e.currentTarget.style.background=C.surfaceHover} onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
+                      <div style={{fontSize:12,fontWeight:600,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{ct.nombre}</div>
+                      <div style={{fontSize:11,color:C.textDim,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{ct.cargo}</div>
+                      <div style={{fontSize:11,overflow:"hidden",textOverflow:"ellipsis"}}><a href={`mailto:${ct.email}`} style={{color:C.accentDim,textDecoration:"none"}}>{ct.email}</a></div>
+                      <div style={{fontSize:11,color:C.textMuted,whiteSpace:"nowrap"}}>{ct.telefono||"—"}</div>
+                      <div style={{fontSize:11,fontWeight:700,textAlign:"center",color:ct.nivel_cargo==="N"?C.warn:ct.nivel_cargo?.includes("-1")?C.accent:ct.nivel_cargo?.includes("-2")?C.blue:C.textDim}}>{ct.nivel_cargo||"—"}</div>
+                    </div>
+                  ))}
+                </div>
+                {client.id_organization&&<div style={{marginTop:10,paddingTop:10,borderTop:`1px solid ${C.border}`,display:"flex",gap:8,alignItems:"center"}}><span style={{fontSize:10,color:C.textMuted}}>ID Organización: <span style={{color:C.accent,fontWeight:700}}>{client.id_organization}</span></span><a href={`https://app.hubspot.com/contacts/7423287/record/0-2/${client.hubspot_company_id}`} target="_blank" rel="noopener noreferrer" style={{fontSize:10,color:C.accentDim,textDecoration:"none",border:`1px solid ${C.accentDim}40`,borderRadius:4,padding:"2px 8px",fontWeight:600}}>Ver empresa ↗</a></div>}
+              </Card>
+            )}
           </div>
         )}
       </div>
@@ -564,24 +684,37 @@ function ClientsView({clients,setClients,deals,onBack}) {
 
 // ─── CALENDAR STRIP ──────────────────────────────────────────────────
 const HOUR_COLORS=[C.accent,C.blue,C.success,C.warn,C.purple,C.danger];
+function addDays(dateStr,n){const d=new Date(dateStr+"T12:00:00");d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;}
 function CalendarStrip() {
-  const calDay=getCalendarDay();
-  const label=isWorkdayOver()?"Mañana":"Hoy";
-  const dayMeetings=MEETINGS_RAW.filter(m=>meetingDateStr(m.start)===calDay).sort((a,b)=>new Date(a.start)-new Date(b.start));
-  const allH=dayMeetings.length?Array.from(new Set(dayMeetings.flatMap(m=>{const sh=new Date(m.start).getUTCHours()-4;const eh=new Date(m.end).getUTCHours()-4;return Array.from({length:eh-sh+2},(_,i)=>sh+i);}))).sort((a,b)=>a-b):[];
+  const [calDay,setCalDay]=useState(getCalendarDay());
+  const isCurrentDay=calDay===todayStr();
+  const isTomorrow=calDay===addDays(todayStr(),1);
+  const navLabel=isCurrentDay?"Hoy":isTomorrow?"Mañana":formatDayLabel(calDay).split(",")[0];
+  const dayMeetings=CALENDAR_EVENTS.filter(m=>meetingDateStr(m.start)===calDay).sort((a,b)=>new Date(a.start)-new Date(b.start));
+  const allH=dayMeetings.length?dayMeetings.flatMap(m=>[meetingHour(m.start),meetingHour(m.end)]):[];
   const minH=allH.length?Math.min(...allH)-.5:8;
-  const maxH=allH.length?Math.max(...allH)+1.5:18;
+  const maxH=allH.length?Math.max(...allH)+1:18;
   const totalH=maxH-minH;
-  const pxH=56;
+  const pxH=54;
   return (
     <Card style={{marginTop:24}}>
-      <SectionTitle>📅 {label} — {formatDayLabel(calDay)}{isWorkdayOver()&&<span style={{fontSize:10,color:C.success,marginLeft:8,background:C.successBg,border:`1px solid ${C.success}40`,borderRadius:10,padding:"1px 8px"}}>Día terminado ✓</span>}</SectionTitle>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}>
+        <span style={{fontSize:11,fontWeight:700,letterSpacing:2,color:C.accentDim,textTransform:"uppercase"}}>
+          📅 {navLabel} — {formatDayLabel(calDay)}
+          {isCurrentDay&&isWorkdayOver()&&<span style={{fontSize:10,color:C.success,marginLeft:8,background:C.successBg,border:`1px solid ${C.success}40`,borderRadius:10,padding:"1px 8px"}}>Día terminado ✓</span>}
+        </span>
+        <div style={{display:"flex",gap:4,alignItems:"center"}}>
+          <button onClick={()=>setCalDay(d=>addDays(d,-1))} style={{background:"none",border:`1px solid ${C.border}`,color:C.textMuted,borderRadius:6,width:26,height:26,cursor:"pointer",fontSize:14,display:"flex",alignItems:"center",justifyContent:"center"}}>‹</button>
+          {!isCurrentDay&&<button onClick={()=>setCalDay(getCalendarDay())} style={{background:"none",border:`1px solid ${C.border}`,color:C.accent,borderRadius:6,padding:"3px 8px",cursor:"pointer",fontSize:10,fontWeight:600,fontFamily:"inherit"}}>Hoy</button>}
+          <button onClick={()=>setCalDay(d=>addDays(d,1))} style={{background:"none",border:`1px solid ${C.border}`,color:C.textMuted,borderRadius:6,width:26,height:26,cursor:"pointer",fontSize:14,display:"flex",alignItems:"center",justifyContent:"center"}}>›</button>
+        </div>
+      </div>
       {dayMeetings.length===0
-        ?<div style={{textAlign:"center",padding:"24px 0",color:C.textMuted,fontSize:13}}>Sin reuniones {label.toLowerCase()} 🎉</div>
+        ?<div style={{textAlign:"center",padding:"24px 0",color:C.textMuted,fontSize:13}}>Sin reuniones {navLabel.toLowerCase()} 🎉</div>
         :<div style={{position:"relative",height:totalH*pxH+24,marginTop:8}}>
           {Array.from({length:Math.ceil(totalH)+1},(_,i)=>{const h=Math.floor(minH)+i;if(h<0||h>23)return null;return <div key={h} style={{position:"absolute",top:(h-minH)*pxH,left:0,right:0,display:"flex",alignItems:"center",gap:8,opacity:.4}}><span style={{fontSize:10,color:C.textMuted,minWidth:36,textAlign:"right"}}>{String(h).padStart(2,"0")}:00</span><div style={{flex:1,height:1,background:C.border}} /></div>;})}
-          {!isWorkdayOver()&&(()=>{const now=getNowCL();const nowH=now.getHours()+(now.getMinutes()/60);if(nowH>=minH&&nowH<=maxH)return <div style={{position:"absolute",left:44,right:0,top:(nowH-minH)*pxH,display:"flex",alignItems:"center",gap:4,zIndex:10}}><div style={{width:8,height:8,borderRadius:"50%",background:C.danger,flexShrink:0}} /><div style={{flex:1,height:2,background:C.danger,opacity:.7}} /></div>;return null;})()}
-          {dayMeetings.map((m,i)=>{const sH=new Date(m.start).getUTCHours()-4+(new Date(m.start).getUTCMinutes()/60);const eH=new Date(m.end).getUTCHours()-4+(new Date(m.end).getUTCMinutes()/60);const top=(sH-minH)*pxH;const height=Math.max((eH-sH)*pxH-4,24);const color=HOUR_COLORS[i%HOUR_COLORS.length];return <div key={m.id} style={{position:"absolute",left:52,right:0,top,height,background:color+"22",border:`1px solid ${color}50`,borderLeft:`3px solid ${color}`,borderRadius:8,padding:"4px 10px",overflow:"hidden"}}><div style={{fontSize:12,fontWeight:600,color:C.text,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{m.title}</div><div style={{fontSize:10,color,marginTop:1}}>{fmtTime(m.start)} – {fmtTime(m.end)}{m.location?" · "+m.location:""}</div></div>;})}
+          {isCurrentDay&&!isWorkdayOver()&&(()=>{const now=getNowCL();const nowH=now.getHours()+(now.getMinutes()/60);if(nowH>=minH&&nowH<=maxH)return <div style={{position:"absolute",left:44,right:0,top:(nowH-minH)*pxH,display:"flex",alignItems:"center",gap:4,zIndex:10}}><div style={{width:8,height:8,borderRadius:"50%",background:C.danger,flexShrink:0}} /><div style={{flex:1,height:2,background:C.danger,opacity:.7}} /></div>;return null;})()}
+          {dayMeetings.map((m,i)=>{const sH=meetingHour(m.start);const eH=meetingHour(m.end);const top=(sH-minH)*pxH;const height=Math.max((eH-sH)*pxH-4,24);const color=HOUR_COLORS[i%HOUR_COLORS.length];return <div key={m.id} style={{position:"absolute",left:52,right:0,top,height,background:color+"22",border:`1px solid ${color}50`,borderLeft:`3px solid ${color}`,borderRadius:8,padding:"4px 10px",overflow:"hidden"}}><div style={{fontSize:12,fontWeight:600,color:C.text,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{m.title}</div><div style={{fontSize:10,color,marginTop:1}}>{fmtTime(m.start)} – {fmtTime(m.end)}{m.location&&!m.location.startsWith("http")?" · "+m.location:""}</div></div>;})}
         </div>
       }
     </Card>
@@ -589,7 +722,7 @@ function CalendarStrip() {
 }
 
 // ─── DASHBOARD ───────────────────────────────────────────────────────
-function DashboardView({clients,setClients,setTab}) {
+function DashboardView({clients,setClients,deals,setTab}) {
   const [priorityFilter,setPriorityFilter]=useState("Todas");
   const [sortBy,setSortBy]=useState("priority+date");
 
@@ -621,8 +754,8 @@ function DashboardView({clients,setClients,setTab}) {
   const alta=allTodos.filter(t=>t.priority==="Alta").length;
   const overdue=allTodos.filter(t=>isOverdue(t.date)).length;
   const todayCount=allTodos.filter(t=>isToday(t.date)).length;
-  const totalPipeline=INITIAL_DEALS.reduce((s,d)=>s+d.value,0);
-  const closing=INITIAL_DEALS.filter(d=>d.stage==="Closing");
+  const totalPipeline=deals.reduce((s,d)=>s+d.value,0);
+  const closing=deals.filter(d=>d.stage==="Closing");
 
   return (
     <div>
@@ -678,7 +811,7 @@ function DashboardView({clients,setClients,setTab}) {
                         <DatePickerCell value={todo.date} onChange={v=>updateTodo(todo.clientId,todo.id,{date:v})} />
                       </div>
                       {dl&&<span style={{fontSize:10,color:dl.color,fontWeight:600,whiteSpace:"nowrap",flexShrink:0,minWidth:48,textAlign:"right"}}>{dl.text}</span>}
-                      <Badge color={PRIORITY_COLOR[todo.priority]} bg={PRIORITY_BG[todo.priority]}>{todo.priority}</Badge>
+                      <div onClick={e=>e.stopPropagation()}><PriorityCell value={todo.priority} onChange={v=>updateTodo(todo.clientId,todo.id,{priority:v})} /></div>
                     </div>
                   </div>
                 );
@@ -769,7 +902,10 @@ const NAV=[{id:"dashboard",label:"Dashboard",icon:"◈"},{id:"pipeline",label:"P
 export default function App() {
   const [tab,setTab]=useState("dashboard");
   const [deals,setDeals]=useState(()=>{
-    try{const s=localStorage.getItem("deals");return s?JSON.parse(s):INITIAL_DEALS;}catch{return INITIAL_DEALS;}
+    try{
+      if(localStorage.getItem("execos_v")!=="3"){localStorage.removeItem("deals");localStorage.removeItem("clients");localStorage.setItem("execos_v","3");}
+      const s=localStorage.getItem("deals");return s?JSON.parse(s):INITIAL_DEALS;
+    }catch{return INITIAL_DEALS;}
   });
   const [clients,setClients]=useState(()=>{
     try{const s=localStorage.getItem("clients");return s?JSON.parse(s):INITIAL_CLIENTS;}catch{return INITIAL_CLIENTS;}
@@ -795,7 +931,7 @@ export default function App() {
         <div style={{fontSize:12,color:C.textMuted,textTransform:"capitalize"}}>{todayLabel}</div>
       </div>
       <div style={{padding:"24px 32px",maxWidth:1200,margin:"0 auto"}}>
-        {tab==="dashboard"&&<DashboardView clients={clients} setClients={setClients} setTab={setTab} />}
+        {tab==="dashboard"&&<DashboardView clients={clients} setClients={setClients} deals={deals} setTab={setTab} />}
         {tab==="pipeline" &&<PipelineView  deals={deals} setDeals={setDeals} onBack={()=>setTab("dashboard")} />}
         {tab==="clients"  &&<ClientsView   clients={clients} setClients={setClients} deals={deals} onBack={()=>setTab("dashboard")} />}
         {tab==="inbox"    &&<InboxView     clients={clients} setClients={setClients} onBack={()=>setTab("dashboard")} />}

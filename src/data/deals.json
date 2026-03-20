@@ -1,0 +1,19 @@
+[
+  {"id":"57829895285","clientName":"CVDCH",         "name":"Eliminar Webpay para Talleres",                       "value":0,      "stage":"SQL",                "closedate":"2026-05-08","currency":"USD"},
+  {"id":"57565295782","clientName":"eClass",        "name":"Renovación plataforma e-learning",                    "value":79237,  "stage":"SQL",                "closedate":"2026-04-30","currency":"USD"},
+  {"id":"56645062937","clientName":"INACAP",        "name":"Integración sistema académico",                       "value":291602, "stage":"SQL",                "closedate":"2026-07-16","currency":"USD"},
+  {"id":"56427453851","clientName":"Iplacex",       "name":"Iplacex | Bettersoft",                                "value":0,      "stage":"Partnership & Otros","closedate":"2026-04-17","currency":"USD"},
+  {"id":"56045038894","clientName":"INAF",          "name":"Licencias plataforma 2026",                           "value":22080,  "stage":"SQL",                "closedate":"2026-04-30","currency":"USD"},
+  {"id":"55063177506","clientName":"U. Adventista", "name":"Universidad Adventista de Chile",                     "value":108417, "stage":"SQL",                "closedate":"2026-04-30","currency":"USD"},
+  {"id":"54970719106","clientName":"UAI",           "name":"Expansión módulo financiero",                         "value":541106, "stage":"SQL",                "closedate":"2026-06-30","currency":"USD"},
+  {"id":"54342803102","clientName":"Esc. Moderna",  "name":"Escuela Moderna de Música y Danza",                  "value":37854,  "stage":"SQL",                "closedate":"2026-04-16","currency":"USD"},
+  {"id":"35360869551","clientName":"PdV PRM",       "name":"Preuniversitario Pedro de Valdivia PRM",              "value":489880, "stage":"SQL",                "closedate":"2026-07-31","currency":"USD"},
+  {"id":"41693726979","clientName":"U. del Alba",   "name":"Universidad del Alba",                                "value":147360, "stage":"Opportunity",        "closedate":"2026-04-30","currency":"USD"},
+  {"id":"35835601316","clientName":"IPP",           "name":"Instituto Profesional IPP",                           "value":110343, "stage":"Opportunity",        "closedate":"2026-03-31","currency":"USD"},
+  {"id":"57392282457","clientName":"IPG",           "name":"IPG - TNE",                                           "value":1530,   "stage":"Cliente Activo",     "closedate":"2026-03-20","currency":"USD"},
+  {"id":"56920380426","clientName":"UVM",           "name":"Universidad Viña del Mar - PRM 2026",                 "value":52906,  "stage":"Closing",            "closedate":"2026-03-31","currency":"USD"},
+  {"id":"53858328868","clientName":"IPSS",          "name":"Instituto Profesional San Sebastián",                 "value":10439,  "stage":"Cliente Activo",     "closedate":"2026-01-28","currency":"USD"},
+  {"id":"48177392163","clientName":"DS Chillán",    "name":"DS Chillán",                                          "value":26492,  "stage":"Closing",            "closedate":"2026-05-31","currency":"USD"},
+  {"id":"41538242568","clientName":"IPSS CIISA",    "name":"Instituto Profesional San Sebastián (CIISA)",         "value":16070,  "stage":"Cliente Activo",     "closedate":"2026-01-07","currency":"USD"},
+  {"id":"32300592005","clientName":"U. Magallanes", "name":"Universidad de Magallanes",                           "value":61747,  "stage":"Cliente Activo",     "closedate":"2026-02-06","currency":"USD"}
+]

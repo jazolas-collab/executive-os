@@ -1,0 +1,187 @@
+[
+  {
+    "id": "57829895285",
+    "name": "CVDCH",
+    "dealName": "Eliminar Webpay para Talleres",
+    "contact": "",
+    "dealId": "57829895285",
+    "dealStage": "SQL",
+    "dealValue": 0,
+    "todos": []
+  },
+  {
+    "id": "57565295782",
+    "name": "eClass",
+    "dealName": "Renovación plataforma e-learning",
+    "contact": "",
+    "dealId": "57565295782",
+    "dealStage": "SQL",
+    "dealValue": 79237,
+    "todos": [
+      {"id": 1, "text": "Preparar consultoría sesión 3",   "emoji": "📋", "source": "whatsapp", "priority": "Alta",  "done": false, "date": "2026-03-12", "notes": "", "gcal_event_id": null},
+      {"id": 2, "text": "Solicitar datos de alumnos",      "emoji": "📊", "source": "email",    "priority": "Media", "done": false, "date": "2026-03-14", "notes": "", "gcal_event_id": null},
+      {"id": 3, "text": "Confirmar renovación contrato",   "emoji": "📝", "source": "llamada",  "priority": "Alta",  "done": false, "date": "2026-03-11", "notes": "", "gcal_event_id": null}
+    ]
+  },
+  {
+    "id": "56645062937",
+    "name": "INACAP",
+    "dealName": "Integración sistema académico",
+    "contact": "",
+    "dealId": "56645062937",
+    "dealStage": "SQL",
+    "dealValue": 291602,
+    "todos": [
+      {"id": 1, "text": "Preparar informe mensual de pagos", "emoji": "📈", "source": "email",   "priority": "Alta",  "done": false, "date": "2026-03-13", "notes": "", "gcal_event_id": null},
+      {"id": 2, "text": "Agendar reunión con TI",            "emoji": "💻", "source": "reunion", "priority": "Media", "done": false, "date": "2026-03-15", "notes": "", "gcal_event_id": null}
+    ]
+  },
+  {
+    "id": "56427453851",
+    "name": "Iplacex",
+    "dealName": "Iplacex | Bettersoft",
+    "contact": "",
+    "dealId": "56427453851",
+    "dealStage": "SQL",
+    "dealValue": 0,
+    "todos": []
+  },
+  {
+    "id": "56045038894",
+    "name": "INAF",
+    "dealName": "Licencias plataforma 2026",
+    "contact": "",
+    "dealId": "56045038894",
+    "dealStage": "SQL",
+    "dealValue": 22080,
+    "todos": []
+  },
+  {
+    "id": "55063177506",
+    "name": "U. Adventista",
+    "dealName": "Universidad Adventista de Chile",
+    "contact": "",
+    "dealId": "55063177506",
+    "dealStage": "SQL",
+    "dealValue": 108417,
+    "todos": []
+  },
+  {
+    "id": "54970719106",
+    "name": "UAI",
+    "dealName": "Expansión módulo financiero",
+    "contact": "",
+    "dealId": "54970719106",
+    "dealStage": "SQL",
+    "dealValue": 541106,
+    "todos": [
+      {"id": 1, "text": "Enviar demo de nueva funcionalidad",            "emoji": "🚀", "source": "email",   "priority": "Alta",  "done": false, "date": "2026-03-12", "notes": "", "gcal_event_id": null},
+      {"id": 2, "text": "Revisar integración con sistema académico",     "emoji": "🔗", "source": "reunion", "priority": "Media", "done": false, "date": "2026-03-18", "notes": "", "gcal_event_id": null}
+    ]
+  },
+  {
+    "id": "54342803102",
+    "name": "Esc. Moderna",
+    "dealName": "Escuela Moderna de Música y Danza",
+    "contact": "",
+    "dealId": "54342803102",
+    "dealStage": "SQL",
+    "dealValue": 37854,
+    "todos": []
+  },
+  {
+    "id": "35360869551",
+    "name": "PdV PRM",
+    "dealName": "Preuniversitario Pedro de Valdivia PRM",
+    "contact": "",
+    "dealId": "35360869551",
+    "dealStage": "SQL",
+    "dealValue": 489880,
+    "todos": []
+  },
+  {
+    "id": "41693726979",
+    "name": "U. del Alba",
+    "dealName": "Universidad del Alba",
+    "contact": "",
+    "dealId": "41693726979",
+    "dealStage": "Opportunity",
+    "dealValue": 147360,
+    "todos": [
+      {"id": 1, "text": "Seguimiento propuesta comercial", "emoji": "💼", "source": "llamada", "priority": "Alta", "done": false, "date": "2026-03-11", "notes": "", "gcal_event_id": null}
+    ]
+  },
+  {
+    "id": "35835601316",
+    "name": "IPP",
+    "dealName": "Instituto Profesional IPP",
+    "contact": "",
+    "dealId": "35835601316",
+    "dealStage": "Opportunity",
+    "dealValue": 110343,
+    "todos": []
+  },
+  {
+    "id": "57392282457",
+    "name": "IPG",
+    "dealName": "IPG - TNE",
+    "contact": "",
+    "dealId": "57392282457",
+    "dealStage": "Closing",
+    "dealValue": 1530,
+    "todos": [
+      {"id": 1, "text": "Validar datos TNE con equipo técnico", "emoji": "✅", "source": "email",  "priority": "Media", "done": false, "date": "2026-03-16", "notes": "", "gcal_event_id": null},
+      {"id": 2, "text": "Enviar firma de contrato",             "emoji": "✍️","source": "manual", "priority": "Alta",  "done": false, "date": "2026-03-12", "notes": "", "gcal_event_id": null}
+    ]
+  },
+  {
+    "id": "56920380426",
+    "name": "UVM",
+    "dealName": "Universidad Viña del Mar - PRM 2026",
+    "contact": "",
+    "dealId": "56920380426",
+    "dealStage": "Closing",
+    "dealValue": 52906,
+    "todos": []
+  },
+  {
+    "id": "53858328868",
+    "name": "IPSS",
+    "dealName": "Instituto Profesional San Sebastián",
+    "contact": "",
+    "dealId": "53858328868",
+    "dealStage": "Closing",
+    "dealValue": 10439,
+    "todos": []
+  },
+  {
+    "id": "48177392163",
+    "name": "DS Chillán",
+    "dealName": "DS Chillán",
+    "contact": "",
+    "dealId": "48177392163",
+    "dealStage": "Closing",
+    "dealValue": 26492,
+    "todos": []
+  },
+  {
+    "id": "41538242568",
+    "name": "IPSS CIISA",
+    "dealName": "Instituto Profesional San Sebastián (CIISA)",
+    "contact": "",
+    "dealId": "41538242568",
+    "dealStage": "Closing",
+    "dealValue": 16070,
+    "todos": []
+  },
+  {
+    "id": "32300592005",
+    "name": "U. Magallanes",
+    "dealName": "Universidad de Magallanes",
+    "contact": "",
+    "dealId": "32300592005",
+    "dealStage": "Closing",
+    "dealValue": 61747,
+    "todos": []
+  }
+]
