@@ -1,8 +1,38 @@
 [
   {
+    "id": "58168768269",
+    "name": "Colegio ISM Santiago",
+    "dealName": "Colegio ISM Santiago",
+    "contact": "",
+    "dealId": "58168768269",
+    "dealStage": "SQL",
+    "dealValue": 13000,
+    "todos": []
+  },
+  {
+    "id": "58168171096",
+    "name": "Academia de Vuelo Golden Eagle",
+    "dealName": "Academia de Vuelo Golden Eagle",
+    "contact": "",
+    "dealId": "58168171096",
+    "dealStage": "SQL",
+    "dealValue": 13000,
+    "todos": []
+  },
+  {
+    "id": "58115376005",
+    "name": "IPCHILE - Cuotas",
+    "dealName": "IPCHILE - Cuotas",
+    "contact": "",
+    "dealId": "58115376005",
+    "dealStage": "SQL",
+    "dealValue": 0,
+    "todos": []
+  },
+  {
     "id": "57829895285",
     "name": "CVDCH",
-    "dealName": "Eliminar Webpay para Talleres",
+    "dealName": "CVDCH - Eliminar Webpay para Talleres",
     "contact": "",
     "dealId": "57829895285",
     "dealStage": "SQL",
@@ -12,28 +42,78 @@
   {
     "id": "57565295782",
     "name": "eClass",
-    "dealName": "Renovación plataforma e-learning",
+    "dealName": "eClass",
     "contact": "",
     "dealId": "57565295782",
     "dealStage": "SQL",
-    "dealValue": 79237,
+    "dealValue": 29010,
     "todos": [
-      {"id": 1, "text": "Preparar consultoría sesión 3",   "emoji": "📋", "source": "whatsapp", "priority": "Alta",  "done": false, "date": "2026-03-12", "notes": "", "gcal_event_id": null},
-      {"id": 2, "text": "Solicitar datos de alumnos",      "emoji": "📊", "source": "email",    "priority": "Media", "done": false, "date": "2026-03-14", "notes": "", "gcal_event_id": null},
-      {"id": 3, "text": "Confirmar renovación contrato",   "emoji": "📝", "source": "llamada",  "priority": "Alta",  "done": false, "date": "2026-03-11", "notes": "", "gcal_event_id": null}
+      {
+        "id": 1,
+        "text": "Preparar consultoría sesión 3",
+        "emoji": "📋",
+        "source": "whatsapp",
+        "priority": "Alta",
+        "done": false,
+        "date": "2026-03-12",
+        "notes": "",
+        "gcal_event_id": null
+      },
+      {
+        "id": 2,
+        "text": "Solicitar datos de alumnos",
+        "emoji": "📊",
+        "source": "email",
+        "priority": "Media",
+        "done": false,
+        "date": "2026-03-14",
+        "notes": "",
+        "gcal_event_id": null
+      },
+      {
+        "id": 3,
+        "text": "Confirmar renovación contrato",
+        "emoji": "📝",
+        "source": "llamada",
+        "priority": "Alta",
+        "done": false,
+        "date": "2026-03-11",
+        "notes": "",
+        "gcal_event_id": null
+      }
     ]
   },
   {
     "id": "56645062937",
     "name": "INACAP",
-    "dealName": "Integración sistema académico",
+    "dealName": "INACAP",
     "contact": "",
     "dealId": "56645062937",
     "dealStage": "SQL",
     "dealValue": 291602,
     "todos": [
-      {"id": 1, "text": "Preparar informe mensual de pagos", "emoji": "📈", "source": "email",   "priority": "Alta",  "done": false, "date": "2026-03-13", "notes": "", "gcal_event_id": null},
-      {"id": 2, "text": "Agendar reunión con TI",            "emoji": "💻", "source": "reunion", "priority": "Media", "done": false, "date": "2026-03-15", "notes": "", "gcal_event_id": null}
+      {
+        "id": 1,
+        "text": "Preparar informe mensual de pagos",
+        "emoji": "📈",
+        "source": "email",
+        "priority": "Alta",
+        "done": false,
+        "date": "2026-03-13",
+        "notes": "",
+        "gcal_event_id": null
+      },
+      {
+        "id": 2,
+        "text": "Agendar reunión con TI",
+        "emoji": "💻",
+        "source": "reunion",
+        "priority": "Media",
+        "done": false,
+        "date": "2026-03-15",
+        "notes": "",
+        "gcal_event_id": null
+      }
     ]
   },
   {
@@ -42,14 +122,14 @@
     "dealName": "Iplacex | Bettersoft",
     "contact": "",
     "dealId": "56427453851",
-    "dealStage": "SQL",
+    "dealStage": "Partnership & Otros",
     "dealValue": 0,
     "todos": []
   },
   {
     "id": "56045038894",
     "name": "INAF",
-    "dealName": "Licencias plataforma 2026",
+    "dealName": "INAF",
     "contact": "",
     "dealId": "56045038894",
     "dealStage": "SQL",
@@ -69,14 +149,34 @@
   {
     "id": "54970719106",
     "name": "UAI",
-    "dealName": "Expansión módulo financiero",
+    "dealName": "UAI",
     "contact": "",
     "dealId": "54970719106",
     "dealStage": "SQL",
     "dealValue": 541106,
     "todos": [
-      {"id": 1, "text": "Enviar demo de nueva funcionalidad",            "emoji": "🚀", "source": "email",   "priority": "Alta",  "done": false, "date": "2026-03-12", "notes": "", "gcal_event_id": null},
-      {"id": 2, "text": "Revisar integración con sistema académico",     "emoji": "🔗", "source": "reunion", "priority": "Media", "done": false, "date": "2026-03-18", "notes": "", "gcal_event_id": null}
+      {
+        "id": 1,
+        "text": "Enviar demo de nueva funcionalidad",
+        "emoji": "🚀",
+        "source": "email",
+        "priority": "Alta",
+        "done": false,
+        "date": "2026-03-12",
+        "notes": "",
+        "gcal_event_id": null
+      },
+      {
+        "id": 2,
+        "text": "Revisar integración con sistema académico",
+        "emoji": "🔗",
+        "source": "reunion",
+        "priority": "Media",
+        "done": false,
+        "date": "2026-03-18",
+        "notes": "",
+        "gcal_event_id": null
+      }
     ]
   },
   {
@@ -108,7 +208,17 @@
     "dealStage": "Opportunity",
     "dealValue": 147360,
     "todos": [
-      {"id": 1, "text": "Seguimiento propuesta comercial", "emoji": "💼", "source": "llamada", "priority": "Alta", "done": false, "date": "2026-03-11", "notes": "", "gcal_event_id": null}
+      {
+        "id": 1,
+        "text": "Seguimiento propuesta comercial",
+        "emoji": "💼",
+        "source": "llamada",
+        "priority": "Alta",
+        "done": false,
+        "date": "2026-03-11",
+        "notes": "",
+        "gcal_event_id": null
+      }
     ]
   },
   {
@@ -127,11 +237,31 @@
     "dealName": "IPG - TNE",
     "contact": "",
     "dealId": "57392282457",
-    "dealStage": "Closing",
+    "dealStage": "Cliente Activo",
     "dealValue": 1530,
     "todos": [
-      {"id": 1, "text": "Validar datos TNE con equipo técnico", "emoji": "✅", "source": "email",  "priority": "Media", "done": false, "date": "2026-03-16", "notes": "", "gcal_event_id": null},
-      {"id": 2, "text": "Enviar firma de contrato",             "emoji": "✍️","source": "manual", "priority": "Alta",  "done": false, "date": "2026-03-12", "notes": "", "gcal_event_id": null}
+      {
+        "id": 1,
+        "text": "Validar datos TNE con equipo técnico",
+        "emoji": "✅",
+        "source": "email",
+        "priority": "Media",
+        "done": false,
+        "date": "2026-03-16",
+        "notes": "",
+        "gcal_event_id": null
+      },
+      {
+        "id": 2,
+        "text": "Enviar firma de contrato",
+        "emoji": "✍️",
+        "source": "manual",
+        "priority": "Alta",
+        "done": false,
+        "date": "2026-03-12",
+        "notes": "",
+        "gcal_event_id": null
+      }
     ]
   },
   {
@@ -147,10 +277,10 @@
   {
     "id": "53858328868",
     "name": "IPSS",
-    "dealName": "Instituto Profesional San Sebastián",
+    "dealName": "Instituto Profesional San Sebastián - Documentos, TNE, Certificados",
     "contact": "",
     "dealId": "53858328868",
-    "dealStage": "Closing",
+    "dealStage": "Cliente Activo",
     "dealValue": 10439,
     "todos": []
   },
@@ -170,7 +300,7 @@
     "dealName": "Instituto Profesional San Sebastián (CIISA)",
     "contact": "",
     "dealId": "41538242568",
-    "dealStage": "Closing",
+    "dealStage": "Cliente Activo",
     "dealValue": 16070,
     "todos": []
   },
@@ -180,7 +310,7 @@
     "dealName": "Universidad de Magallanes",
     "contact": "",
     "dealId": "32300592005",
-    "dealStage": "Closing",
+    "dealStage": "Cliente Activo",
     "dealValue": 61747,
     "todos": []
   }
