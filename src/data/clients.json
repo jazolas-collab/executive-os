@@ -143,7 +143,7 @@
     "contact": "",
     "dealId": "55063177506",
     "dealStage": "SQL",
-    "dealValue": 108417,
+    "dealValue": 111036,
     "todos": []
   },
   {
@@ -186,7 +186,7 @@
     "contact": "",
     "dealId": "54342803102",
     "dealStage": "SQL",
-    "dealValue": 37854,
+    "dealValue": 29272,
     "todos": []
   },
   {
@@ -312,6 +312,966 @@
     "dealId": "32300592005",
     "dealStage": "Cliente Activo",
     "dealValue": 61747,
+    "todos": []
+  },
+  {
+    "id": "54351277600",
+    "name": "Jardín Crearé",
+    "dealName": "Jardín Crearé",
+    "contact": "",
+    "dealId": "54351277600",
+    "dealStage": "SQL",
+    "dealValue": 6843,
+    "todos": []
+  },
+  {
+    "id": "54322388630",
+    "name": "Preu Cóndores",
+    "dealName": "Preu Cóndores",
+    "contact": "",
+    "dealId": "54322388630",
+    "dealStage": "SQL",
+    "dealValue": 13000,
+    "todos": []
+  },
+  {
+    "id": "54212098399",
+    "name": "Radio Beethoven",
+    "dealName": "Radio Beethoven",
+    "contact": "",
+    "dealId": "54212098399",
+    "dealStage": "SQL",
+    "dealValue": 5280,
+    "todos": []
+  },
+  {
+    "id": "53429370515",
+    "name": "Jardín Huellas",
+    "dealName": "Jardín Huellas",
+    "contact": "",
+    "dealId": "53429370515",
+    "dealStage": "SQL",
+    "dealValue": 16517,
+    "todos": []
+  },
+  {
+    "id": "49727715747",
+    "name": "Aldeas Infantiles SOS Chile",
+    "dealName": "Aldeas Infantiles SOS Chile",
+    "contact": "",
+    "dealId": "49727715747",
+    "dealStage": "SQL",
+    "dealValue": 13702,
+    "todos": []
+  },
+  {
+    "id": "49695465365",
+    "name": "CFT Los Lagos",
+    "dealName": "CFT Los Lagos",
+    "contact": "",
+    "dealId": "49695465365",
+    "dealStage": "SQL",
+    "dealValue": 8000,
+    "todos": []
+  },
+  {
+    "id": "48825571654",
+    "name": "Universidad Católica del Maule",
+    "dealName": "Universidad Católica del Maule",
+    "contact": "",
+    "dealId": "48825571654",
+    "dealStage": "SQL",
+    "dealValue": 16000,
+    "todos": []
+  },
+  {
+    "id": "46816045334",
+    "name": "Prosegur Chile",
+    "dealName": "Prosegur Chile",
+    "contact": "",
+    "dealId": "46816045334",
+    "dealStage": "SQL",
+    "dealValue": 94477,
+    "todos": []
+  },
+  {
+    "id": "46570162445",
+    "name": "Craighouse - GetNet",
+    "dealName": "Craighouse - GetNet",
+    "contact": "",
+    "dealId": "46570162445",
+    "dealStage": "SQL",
+    "dealValue": 47377,
+    "todos": []
+  },
+  {
+    "id": "46566411643",
+    "name": "VDCH - Matrículas",
+    "dealName": "VDCH - Matrículas",
+    "contact": "",
+    "dealId": "46566411643",
+    "dealStage": "SQL",
+    "dealValue": 496,
+    "todos": []
+  },
+  {
+    "id": "46061272649",
+    "name": "Versu AI",
+    "dealName": "Versu AI",
+    "contact": "",
+    "dealId": "46061272649",
+    "dealStage": "SQL",
+    "dealValue": 9344,
+    "todos": []
+  },
+  {
+    "id": "45672601866",
+    "name": "Kumquat Inmobiliaria",
+    "dealName": "Kumquat Inmobiliaria",
+    "contact": "",
+    "dealId": "45672601866",
+    "dealStage": "SQL",
+    "dealValue": 8000,
+    "todos": []
+  },
+  {
+    "id": "45138866335",
+    "name": "Colegio Coya",
+    "dealName": "Colegio Coya",
+    "contact": "",
+    "dealId": "45138866335",
+    "dealStage": "SQL",
+    "dealValue": 26099,
+    "todos": []
+  },
+  {
+    "id": "44874835278",
+    "name": "Anglo American School",
+    "dealName": "Anglo American School",
+    "contact": "",
+    "dealId": "44874835278",
+    "dealStage": "SQL",
+    "dealValue": 5839,
+    "todos": []
+  },
+  {
+    "id": "44845865276",
+    "name": "Smart CFO",
+    "dealName": "Smart CFO",
+    "contact": "",
+    "dealId": "44845865276",
+    "dealStage": "SQL",
+    "dealValue": 8818,
+    "todos": []
+  },
+  {
+    "id": "44567330383",
+    "name": "Club de golf Los Lirios",
+    "dealName": "Club de golf Los Lirios",
+    "contact": "",
+    "dealId": "44567330383",
+    "dealStage": "SQL",
+    "dealValue": 8000,
+    "todos": []
+  },
+  {
+    "id": "44545210775",
+    "name": "Educación Continua PUC",
+    "dealName": "Educación Continua PUC",
+    "contact": "",
+    "dealId": "44545210775",
+    "dealStage": "SQL",
+    "dealValue": 163453,
+    "todos": []
+  },
+  {
+    "id": "43858695994",
+    "name": "Chattigo",
+    "dealName": "Chattigo",
+    "contact": "",
+    "dealId": "43858695994",
+    "dealStage": "SQL",
+    "dealValue": 17139,
+    "todos": []
+  },
+  {
+    "id": "43285389853",
+    "name": "DS Chillán",
+    "dealName": "DS Chillán",
+    "contact": "",
+    "dealId": "43285389853",
+    "dealStage": "SQL",
+    "dealValue": 26492,
+    "todos": []
+  },
+  {
+    "id": "41879533897",
+    "name": "Andreé English School",
+    "dealName": "Andreé English School",
+    "contact": "",
+    "dealId": "41879533897",
+    "dealStage": "SQL",
+    "dealValue": 16000,
+    "todos": []
+  },
+  {
+    "id": "41523256589",
+    "name": "Colegio San Benito",
+    "dealName": "Colegio San Benito",
+    "contact": "",
+    "dealId": "41523256589",
+    "dealStage": "SQL",
+    "dealValue": 55889,
+    "todos": []
+  },
+  {
+    "id": "41461072044",
+    "name": "Soltecsa",
+    "dealName": "Soltecsa",
+    "contact": "",
+    "dealId": "41461072044",
+    "dealStage": "SQL",
+    "dealValue": 24930,
+    "todos": []
+  },
+  {
+    "id": "41420940588",
+    "name": "Colegio Barrie Montessori",
+    "dealName": "Colegio Barrie Montessori",
+    "contact": "",
+    "dealId": "41420940588",
+    "dealStage": "SQL",
+    "dealValue": 12941,
+    "todos": []
+  },
+  {
+    "id": "41114812306",
+    "name": "Saint John's School",
+    "dealName": "Saint John's School",
+    "contact": "",
+    "dealId": "41114812306",
+    "dealStage": "SQL",
+    "dealValue": 41757,
+    "todos": []
+  },
+  {
+    "id": "40980458786",
+    "name": "Apanio",
+    "dealName": "Apanio",
+    "contact": "",
+    "dealId": "40980458786",
+    "dealStage": "SQL",
+    "dealValue": 2673,
+    "todos": []
+  },
+  {
+    "id": "40977646869",
+    "name": "IP Valle Central - Nuevo Core + Mensajería",
+    "dealName": "IP Valle Central - Nuevo Core + Mensajería",
+    "contact": "",
+    "dealId": "40977646869",
+    "dealStage": "SQL",
+    "dealValue": 899,
+    "todos": []
+  },
+  {
+    "id": "40841839631",
+    "name": "UACH",
+    "dealName": "UACH",
+    "contact": "",
+    "dealId": "40841839631",
+    "dealStage": "SQL",
+    "dealValue": 121016,
+    "todos": []
+  },
+  {
+    "id": "40584965269",
+    "name": "Colegio San Damián",
+    "dealName": "Colegio San Damián",
+    "contact": "",
+    "dealId": "40584965269",
+    "dealStage": "SQL",
+    "dealValue": 15463,
+    "todos": []
+  },
+  {
+    "id": "39689697185",
+    "name": "CFT Estatal de Arica y Parinacota",
+    "dealName": "CFT Estatal de Arica y Parinacota",
+    "contact": "",
+    "dealId": "39689697185",
+    "dealStage": "SQL",
+    "dealValue": 9731,
+    "todos": []
+  },
+  {
+    "id": "39221513640",
+    "name": "UCSH",
+    "dealName": "UCSH",
+    "contact": "",
+    "dealId": "39221513640",
+    "dealStage": "SQL",
+    "dealValue": 17980,
+    "todos": []
+  },
+  {
+    "id": "39209862662",
+    "name": "IPG - Botón página web",
+    "dealName": "IPG - Botón página web",
+    "contact": "",
+    "dealId": "39209862662",
+    "dealStage": "SQL",
+    "dealValue": 13993,
+    "todos": []
+  },
+  {
+    "id": "38984375097",
+    "name": "Uniacc Portales Múltiples - Congresos",
+    "dealName": "Uniacc Portales Múltiples - Congresos",
+    "contact": "",
+    "dealId": "38984375097",
+    "dealStage": "SQL",
+    "dealValue": 1476,
+    "todos": []
+  },
+  {
+    "id": "38816516625",
+    "name": "Colegio Alliance La Serena",
+    "dealName": "Colegio Alliance La Serena",
+    "contact": "",
+    "dealId": "38816516625",
+    "dealStage": "SQL",
+    "dealValue": 12730,
+    "todos": []
+  },
+  {
+    "id": "38765982237",
+    "name": "Alianza Francesa Curicó",
+    "dealName": "Alianza Francesa Curicó",
+    "contact": "",
+    "dealId": "38765982237",
+    "dealStage": "SQL",
+    "dealValue": 25162,
+    "todos": []
+  },
+  {
+    "id": "38733360459",
+    "name": "CFT Maule",
+    "dealName": "CFT Maule",
+    "contact": "",
+    "dealId": "38733360459",
+    "dealStage": "SQL",
+    "dealValue": 7267,
+    "todos": []
+  },
+  {
+    "id": "38528647210",
+    "name": "Colegio Puerto Varas - SIAE",
+    "dealName": "Colegio Puerto Varas - SIAE",
+    "contact": "",
+    "dealId": "38528647210",
+    "dealStage": "SQL",
+    "dealValue": 30074,
+    "todos": []
+  },
+  {
+    "id": "38384722043",
+    "name": "Contempora Seguros | Cartera Dólares",
+    "dealName": "Contempora Seguros | Cartera Dólares",
+    "contact": "",
+    "dealId": "38384722043",
+    "dealStage": "SQL",
+    "dealValue": 8103,
+    "todos": []
+  },
+  {
+    "id": "38318911658",
+    "name": "SSCC La Serena",
+    "dealName": "SSCC La Serena",
+    "contact": "",
+    "dealId": "38318911658",
+    "dealStage": "SQL",
+    "dealValue": 15534,
+    "todos": []
+  },
+  {
+    "id": "37358035047",
+    "name": "Chantilly - Distribuidores y Empresas",
+    "dealName": "Chantilly - Distribuidores y Empresas",
+    "contact": "",
+    "dealId": "37358035047",
+    "dealStage": "SQL",
+    "dealValue": 42743,
+    "todos": []
+  },
+  {
+    "id": "36610090404",
+    "name": "Amipos",
+    "dealName": "Amipos",
+    "contact": "",
+    "dealId": "36610090404",
+    "dealStage": "SQL",
+    "dealValue": 12180,
+    "todos": []
+  },
+  {
+    "id": "36532053848",
+    "name": "Greystar Chile",
+    "dealName": "Greystar Chile",
+    "contact": "",
+    "dealId": "36532053848",
+    "dealStage": "SQL",
+    "dealValue": 91534,
+    "todos": []
+  },
+  {
+    "id": "35836024984",
+    "name": "UCSC",
+    "dealName": "UCSC",
+    "contact": "",
+    "dealId": "35836024984",
+    "dealStage": "SQL",
+    "dealValue": 45408,
+    "todos": []
+  },
+  {
+    "id": "35849473322",
+    "name": "DockCharged",
+    "dealName": "DockCharged",
+    "contact": "",
+    "dealId": "35849473322",
+    "dealStage": "SQL",
+    "dealValue": 9264,
+    "todos": []
+  },
+  {
+    "id": "35836887083",
+    "name": "Craighouse",
+    "dealName": "Craighouse",
+    "contact": "",
+    "dealId": "35836887083",
+    "dealStage": "SQL",
+    "dealValue": 47942,
+    "todos": []
+  },
+  {
+    "id": "35831313486",
+    "name": "Health Intelligence Solutions",
+    "dealName": "Health Intelligence Solutions",
+    "contact": "",
+    "dealId": "35831313486",
+    "dealStage": "SQL",
+    "dealValue": 8162,
+    "todos": []
+  },
+  {
+    "id": "35754603583",
+    "name": "UDLA Cross DD / Transferencias",
+    "dealName": "UDLA Cross DD / Transferencias",
+    "contact": "",
+    "dealId": "35754603583",
+    "dealStage": "SQL",
+    "dealValue": 16000,
+    "todos": []
+  },
+  {
+    "id": "35591674388",
+    "name": "CFT Biobío",
+    "dealName": "CFT Biobío",
+    "contact": "",
+    "dealId": "35591674388",
+    "dealStage": "SQL",
+    "dealValue": 6191,
+    "todos": []
+  },
+  {
+    "id": "35576409922",
+    "name": "Universidad Adolfo Ibañez Etapa 1 | Iframe",
+    "dealName": "Universidad Adolfo Ibañez Etapa 1 | Iframe",
+    "contact": "",
+    "dealId": "35576409922",
+    "dealStage": "SQL",
+    "dealValue": 16000,
+    "todos": []
+  },
+  {
+    "id": "34908870728",
+    "name": "Contempora Seguros Campaña One Time + Toggle Switch",
+    "dealName": "Contempora Seguros Campaña One Time + Toggle Switch",
+    "contact": "",
+    "dealId": "34908870728",
+    "dealStage": "SQL",
+    "dealValue": 4292,
+    "todos": []
+  },
+  {
+    "id": "34832998283",
+    "name": "CFT Araucanía",
+    "dealName": "CFT Araucanía",
+    "contact": "",
+    "dealId": "34832998283",
+    "dealStage": "SQL",
+    "dealValue": 5927,
+    "todos": []
+  },
+  {
+    "id": "34468551477",
+    "name": "Parroquia Santa Madre de Dios",
+    "dealName": "Parroquia Santa Madre de Dios",
+    "contact": "",
+    "dealId": "34468551477",
+    "dealStage": "SQL",
+    "dealValue": -111,
+    "todos": []
+  },
+  {
+    "id": "34361326919",
+    "name": "CFT Coquimbo",
+    "dealName": "CFT Coquimbo",
+    "contact": "",
+    "dealId": "34361326919",
+    "dealStage": "SQL",
+    "dealValue": 5908,
+    "todos": []
+  },
+  {
+    "id": "34054573240",
+    "name": "CFT Estatal Tarapacá",
+    "dealName": "CFT Estatal Tarapacá",
+    "contact": "",
+    "dealId": "34054573240",
+    "dealStage": "SQL",
+    "dealValue": 6234,
+    "todos": []
+  },
+  {
+    "id": "33890567945",
+    "name": "Rilay Inmobiliaria",
+    "dealName": "Rilay Inmobiliaria",
+    "contact": "",
+    "dealId": "33890567945",
+    "dealStage": "SQL",
+    "dealValue": 4611,
+    "todos": []
+  },
+  {
+    "id": "33789855069",
+    "name": "Clickhouse (Holding Federal)",
+    "dealName": "Clickhouse (Holding Federal)",
+    "contact": "",
+    "dealId": "33789855069",
+    "dealStage": "SQL",
+    "dealValue": 2016,
+    "todos": []
+  },
+  {
+    "id": "33114306413",
+    "name": "Aramark",
+    "dealName": "Aramark",
+    "contact": "",
+    "dealId": "33114306413",
+    "dealStage": "SQL",
+    "dealValue": 4930,
+    "todos": []
+  },
+  {
+    "id": "32973265991",
+    "name": "CFT PUCV - Migración V3",
+    "dealName": "CFT PUCV - Migración V3",
+    "contact": "",
+    "dealId": "32973265991",
+    "dealStage": "SQL",
+    "dealValue": 27455,
+    "todos": []
+  },
+  {
+    "id": "32630305411",
+    "name": "Think-e inglés Chile",
+    "dealName": "Think-e inglés Chile",
+    "contact": "",
+    "dealId": "32630305411",
+    "dealStage": "SQL",
+    "dealValue": 15916,
+    "todos": []
+  },
+  {
+    "id": "32511554886",
+    "name": "Universidad Católica Valparaíso",
+    "dealName": "Universidad Católica Valparaíso",
+    "contact": "",
+    "dealId": "32511554886",
+    "dealStage": "SQL",
+    "dealValue": 95052,
+    "todos": []
+  },
+  {
+    "id": "32299407759",
+    "name": "Owner Home",
+    "dealName": "Owner Home",
+    "contact": "",
+    "dealId": "32299407759",
+    "dealStage": "SQL",
+    "dealValue": 8371,
+    "todos": []
+  },
+  {
+    "id": "32254185145",
+    "name": "Universidad Adolfo Ibañez",
+    "dealName": "Universidad Adolfo Ibañez",
+    "contact": "",
+    "dealId": "32254185145",
+    "dealStage": "SQL",
+    "dealValue": 232066,
+    "todos": []
+  },
+  {
+    "id": "32110498434",
+    "name": "UNIVERSIDAD UNIACC",
+    "dealName": "UNIVERSIDAD UNIACC",
+    "contact": "",
+    "dealId": "32110498434",
+    "dealStage": "SQL",
+    "dealValue": 13489,
+    "todos": []
+  },
+  {
+    "id": "31675291783",
+    "name": "Coonfia",
+    "dealName": "Coonfia",
+    "contact": "",
+    "dealId": "31675291783",
+    "dealStage": "SQL",
+    "dealValue": 32475,
+    "todos": []
+  },
+  {
+    "id": "30947308835",
+    "name": "Aldeas Infantiles SOS Chile",
+    "dealName": "Aldeas Infantiles SOS Chile",
+    "contact": "",
+    "dealId": "30947308835",
+    "dealStage": "SQL",
+    "dealValue": 28260,
+    "todos": []
+  },
+  {
+    "id": "30733614210",
+    "name": "Colegio Montessori Talca",
+    "dealName": "Colegio Montessori Talca",
+    "contact": "",
+    "dealId": "30733614210",
+    "dealStage": "SQL",
+    "dealValue": 38412,
+    "todos": []
+  },
+  {
+    "id": "30599020597",
+    "name": "Colegio Carampangue",
+    "dealName": "Colegio Carampangue",
+    "contact": "",
+    "dealId": "30599020597",
+    "dealStage": "SQL",
+    "dealValue": 35003,
+    "todos": []
+  },
+  {
+    "id": "30224211261",
+    "name": "Inmobiliaria Ecomac",
+    "dealName": "Inmobiliaria Ecomac",
+    "contact": "",
+    "dealId": "30224211261",
+    "dealStage": "SQL",
+    "dealValue": 8000,
+    "todos": []
+  },
+  {
+    "id": "30135799917",
+    "name": "Corredora De Seguros Universal",
+    "dealName": "Corredora De Seguros Universal",
+    "contact": "",
+    "dealId": "30135799917",
+    "dealStage": "SQL",
+    "dealValue": 6563,
+    "todos": []
+  },
+  {
+    "id": "30048137343",
+    "name": "Quinta Casa",
+    "dealName": "Quinta Casa",
+    "contact": "",
+    "dealId": "30048137343",
+    "dealStage": "SQL",
+    "dealValue": 13748,
+    "todos": []
+  },
+  {
+    "id": "29887286423",
+    "name": "Cpech 2025",
+    "dealName": "Cpech 2025",
+    "contact": "",
+    "dealId": "29887286423",
+    "dealStage": "SQL",
+    "dealValue": 41200,
+    "todos": []
+  },
+  {
+    "id": "29801079191",
+    "name": "Colegio Mariano de Schoenstatt",
+    "dealName": "Colegio Mariano de Schoenstatt",
+    "contact": "",
+    "dealId": "29801079191",
+    "dealStage": "SQL",
+    "dealValue": 8000,
+    "todos": []
+  },
+  {
+    "id": "29242235160",
+    "name": "Universidad Diego Portales",
+    "dealName": "Universidad Diego Portales",
+    "contact": "",
+    "dealId": "29242235160",
+    "dealStage": "SQL",
+    "dealValue": 0,
+    "todos": []
+  },
+  {
+    "id": "29111259985",
+    "name": "Deutsche Schule Temuco (Alexia)",
+    "dealName": "Deutsche Schule Temuco (Alexia)",
+    "contact": "",
+    "dealId": "29111259985",
+    "dealStage": "SQL",
+    "dealValue": 28802,
+    "todos": []
+  },
+  {
+    "id": "29053175071",
+    "name": "Colegio San Ignacio Alonso de Ovalle",
+    "dealName": "Colegio San Ignacio Alonso de Ovalle",
+    "contact": "",
+    "dealId": "29053175071",
+    "dealStage": "SQL",
+    "dealValue": 38901,
+    "todos": []
+  },
+  {
+    "id": "28980162108",
+    "name": "Colegio Barrie Montessori",
+    "dealName": "Colegio Barrie Montessori",
+    "contact": "",
+    "dealId": "28980162108",
+    "dealStage": "SQL",
+    "dealValue": 0,
+    "todos": []
+  },
+  {
+    "id": "28969254430",
+    "name": "Corpeduff",
+    "dealName": "Corpeduff",
+    "contact": "",
+    "dealId": "28969254430",
+    "dealStage": "SQL",
+    "dealValue": 49384,
+    "todos": []
+  },
+  {
+    "id": "28943305567",
+    "name": "Club Palestino Ramas Deportivas",
+    "dealName": "Club Palestino Ramas Deportivas",
+    "contact": "",
+    "dealId": "28943305567",
+    "dealStage": "SQL",
+    "dealValue": 27061,
+    "todos": []
+  },
+  {
+    "id": "28939069336",
+    "name": "ECAS Nueva Propuesta",
+    "dealName": "ECAS Nueva Propuesta",
+    "contact": "",
+    "dealId": "28939069336",
+    "dealStage": "SQL",
+    "dealValue": 9074,
+    "todos": []
+  },
+  {
+    "id": "28876565838",
+    "name": "Colegios Arzobispado",
+    "dealName": "Colegios Arzobispado",
+    "contact": "",
+    "dealId": "28876565838",
+    "dealStage": "SQL",
+    "dealValue": 30793,
+    "todos": []
+  },
+  {
+    "id": "28673354838",
+    "name": "Farmland School",
+    "dealName": "Farmland School",
+    "contact": "",
+    "dealId": "28673354838",
+    "dealStage": "SQL",
+    "dealValue": 10400,
+    "todos": []
+  },
+  {
+    "id": "28534696623",
+    "name": "Colegio Capellan Pascal",
+    "dealName": "Colegio Capellan Pascal",
+    "contact": "",
+    "dealId": "28534696623",
+    "dealStage": "SQL",
+    "dealValue": 11734,
+    "todos": []
+  },
+  {
+    "id": "28418849152",
+    "name": "Fundación DOCERE",
+    "dealName": "Fundación DOCERE",
+    "contact": "",
+    "dealId": "28418849152",
+    "dealStage": "SQL",
+    "dealValue": 0,
+    "todos": []
+  },
+  {
+    "id": "28360066485",
+    "name": "Buonavita",
+    "dealName": "Buonavita",
+    "contact": "",
+    "dealId": "28360066485",
+    "dealStage": "SQL",
+    "dealValue": 11748,
+    "todos": []
+  },
+  {
+    "id": "28367433085",
+    "name": "Yapo.cl",
+    "dealName": "Yapo.cl",
+    "contact": "",
+    "dealId": "28367433085",
+    "dealStage": "SQL",
+    "dealValue": 5350,
+    "todos": []
+  },
+  {
+    "id": "28341461687",
+    "name": "Federal",
+    "dealName": "Federal",
+    "contact": "",
+    "dealId": "28341461687",
+    "dealStage": "SQL",
+    "dealValue": 178362,
+    "todos": []
+  },
+  {
+    "id": "28330013530",
+    "name": "Colegio San Luis de Alba",
+    "dealName": "Colegio San Luis de Alba",
+    "contact": "",
+    "dealId": "28330013530",
+    "dealStage": "SQL",
+    "dealValue": 7644,
+    "todos": []
+  },
+  {
+    "id": "28299001965",
+    "name": "Universidad Mayor | Gestión PAC-PAT",
+    "dealName": "Universidad Mayor | Gestión PAC-PAT",
+    "contact": "",
+    "dealId": "28299001965",
+    "dealStage": "SQL",
+    "dealValue": 54313,
+    "todos": []
+  },
+  {
+    "id": "28249740606",
+    "name": "Universidad Austral de Chile",
+    "dealName": "Universidad Austral de Chile",
+    "contact": "",
+    "dealId": "28249740606",
+    "dealStage": "SQL",
+    "dealValue": 122754,
+    "todos": []
+  },
+  {
+    "id": "23317523508",
+    "name": "CFT Estatal Región de Valparaíso",
+    "dealName": "CFT Estatal Región de Valparaíso",
+    "contact": "",
+    "dealId": "23317523508",
+    "dealStage": "SQL",
+    "dealValue": 6364,
+    "todos": []
+  },
+  {
+    "id": "23007994240",
+    "name": "Colegio Saint Gabriel's",
+    "dealName": "Colegio Saint Gabriel's",
+    "contact": "",
+    "dealId": "23007994240",
+    "dealStage": "SQL",
+    "dealValue": 51981,
+    "todos": []
+  },
+  {
+    "id": "21930987579",
+    "name": "Universidad Santo Tomás",
+    "dealName": "Universidad Santo Tomás",
+    "contact": "",
+    "dealId": "21930987579",
+    "dealStage": "SQL",
+    "dealValue": 93006,
+    "todos": []
+  },
+  {
+    "id": "20610085534",
+    "name": "Aguas Nuevas",
+    "dealName": "Aguas Nuevas",
+    "contact": "",
+    "dealId": "20610085534",
+    "dealStage": "SQL",
+    "dealValue": 20962,
+    "todos": []
+  },
+  {
+    "id": "15849709937",
+    "name": "Coonfia",
+    "dealName": "Coonfia",
+    "contact": "",
+    "dealId": "15849709937",
+    "dealStage": "SQL",
+    "dealValue": 40083,
+    "todos": []
+  },
+  {
+    "id": "58373219357",
+    "name": "CFT Araucanía",
+    "dealName": "CFT Araucanía",
+    "contact": "",
+    "dealId": "58373219357",
+    "dealStage": "SQL",
+    "dealValue": 13000,
+    "todos": []
+  },
+  {
+    "id": "58385569431",
+    "name": "UCM",
+    "dealName": "UCM",
+    "contact": "",
+    "dealId": "58385569431",
+    "dealStage": "SQL",
+    "dealValue": 13000,
+    "todos": []
+  },
+  {
+    "id": "58320579984",
+    "name": "Universidad de los Andes",
+    "dealName": "Universidad de los Andes",
+    "contact": "",
+    "dealId": "58320579984",
+    "dealStage": "SQL",
+    "dealValue": 45000,
     "todos": []
   }
 ]

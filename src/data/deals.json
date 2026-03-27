@@ -1,11 +1,38 @@
 [
   {
-    "id": "58115376005",
-    "clientName": "IPCHILE - Cuotas",
-    "name": "IPCHILE - Cuotas",
-    "value": 0,
+    "id": "58373219357",
+    "clientName": "CFT Araucanía",
+    "name": "CFT Araucanía",
+    "value": 13000,
     "stage": "SQL",
-    "closedate": "2026-05-17",
+    "closedate": "2026-04-25",
+    "currency": "USD"
+  },
+  {
+    "id": "58385569431",
+    "clientName": "UCM",
+    "name": "UCM",
+    "value": 13000,
+    "stage": "SQL",
+    "closedate": "2026-04-25",
+    "currency": "USD"
+  },
+  {
+    "id": "58320579984",
+    "clientName": "Universidad de los Andes",
+    "name": "Universidad de los Andes",
+    "value": 45000,
+    "stage": "SQL",
+    "closedate": "2026-05-23",
+    "currency": "USD"
+  },
+  {
+    "id": "58168768269",
+    "clientName": "Colegio ISM Santiago",
+    "name": "Colegio ISM Santiago",
+    "value": 13000,
+    "stage": "SQL",
+    "closedate": "2026-04-18",
     "currency": "USD"
   },
   {
@@ -18,12 +45,12 @@
     "currency": "USD"
   },
   {
-    "id": "58168768269",
-    "clientName": "Colegio ISM Santiago",
-    "name": "Colegio ISM Santiago",
-    "value": 13000,
+    "id": "58115376005",
+    "clientName": "IPCHILE - Cuotas",
+    "name": "IPCHILE - Cuotas",
+    "value": 0,
     "stage": "SQL",
-    "closedate": "2026-04-18",
+    "closedate": "2026-05-17",
     "currency": "USD"
   },
   {
@@ -42,6 +69,24 @@
     "value": 29010,
     "stage": "SQL",
     "closedate": "2026-04-30",
+    "currency": "USD"
+  },
+  {
+    "id": "57392282457",
+    "clientName": "IPG",
+    "name": "IPG - TNE",
+    "value": 1530,
+    "stage": "Cliente Activo",
+    "closedate": "2026-03-25",
+    "currency": "USD"
+  },
+  {
+    "id": "56920380426",
+    "clientName": "UVM",
+    "name": "Universidad Viña del Mar - PRM 2026",
+    "value": 52906,
+    "stage": "Closing",
+    "closedate": "2026-03-18",
     "currency": "USD"
   },
   {
@@ -75,7 +120,7 @@
     "id": "55063177506",
     "clientName": "U. Adventista",
     "name": "Universidad Adventista de Chile",
-    "value": 108417,
+    "value": 111036,
     "stage": "SQL",
     "closedate": "2026-04-30",
     "currency": "USD"
@@ -90,57 +135,39 @@
     "currency": "USD"
   },
   {
+    "id": "54351277600",
+    "clientName": "Jardín Crearé",
+    "name": "Jardín Crearé",
+    "value": 6843,
+    "stage": "SQL",
+    "closedate": "2026-02-12",
+    "currency": "USD"
+  },
+  {
     "id": "54342803102",
     "clientName": "Esc. Moderna",
     "name": "Escuela Moderna de Música y Danza",
-    "value": 37854,
+    "value": 29272,
     "stage": "SQL",
     "closedate": "2026-04-16",
     "currency": "USD"
   },
   {
-    "id": "35360869551",
-    "clientName": "PdV PRM",
-    "name": "Preuniversitario Pedro de Valdivia PRM",
-    "value": 489880,
+    "id": "54322388630",
+    "clientName": "Preu Cóndores",
+    "name": "Preu Cóndores",
+    "value": 13000,
     "stage": "SQL",
-    "closedate": "2026-07-31",
+    "closedate": "2026-03-03",
     "currency": "USD"
   },
   {
-    "id": "41693726979",
-    "clientName": "U. del Alba",
-    "name": "Universidad del Alba",
-    "value": 147360,
-    "stage": "Opportunity",
-    "closedate": "2026-04-30",
-    "currency": "USD"
-  },
-  {
-    "id": "35835601316",
-    "clientName": "IPP",
-    "name": "Instituto Profesional IPP",
-    "value": 110343,
-    "stage": "Opportunity",
-    "closedate": "2026-05-12",
-    "currency": "USD"
-  },
-  {
-    "id": "57392282457",
-    "clientName": "IPG",
-    "name": "IPG - TNE",
-    "value": 1530,
-    "stage": "Cliente Activo",
-    "closedate": "2026-03-20",
-    "currency": "USD"
-  },
-  {
-    "id": "56920380426",
-    "clientName": "UVM",
-    "name": "Universidad Viña del Mar - PRM 2026",
-    "value": 52906,
-    "stage": "Closing",
-    "closedate": "2026-03-18",
+    "id": "54212098399",
+    "clientName": "Radio Beethoven",
+    "name": "Radio Beethoven",
+    "value": 5280,
+    "stage": "SQL",
+    "closedate": "2026-03-02",
     "currency": "USD"
   },
   {
@@ -153,12 +180,174 @@
     "currency": "USD"
   },
   {
+    "id": "53429370515",
+    "clientName": "Jardín Huellas",
+    "name": "Jardín Huellas",
+    "value": 16517,
+    "stage": "SQL",
+    "closedate": "2026-02-24",
+    "currency": "USD"
+  },
+  {
+    "id": "49727715747",
+    "clientName": "Aldeas Infantiles SOS Chile",
+    "name": "Aldeas Infantiles SOS Chile",
+    "value": 13702,
+    "stage": "SQL",
+    "closedate": "2025-12-23",
+    "currency": "USD"
+  },
+  {
+    "id": "49695465365",
+    "clientName": "CFT Los Lagos",
+    "name": "CFT Los Lagos",
+    "value": 8000,
+    "stage": "SQL",
+    "closedate": "2025-12-10",
+    "currency": "USD"
+  },
+  {
+    "id": "48825571654",
+    "clientName": "Universidad Católica del Maule",
+    "name": "Universidad Católica del Maule",
+    "value": 16000,
+    "stage": "SQL",
+    "closedate": "2026-01-27",
+    "currency": "USD"
+  },
+  {
     "id": "48177392163",
     "clientName": "DS Chillán",
     "name": "DS Chillán",
     "value": 26492,
     "stage": "Closing",
     "closedate": "2026-05-31",
+    "currency": "USD"
+  },
+  {
+    "id": "46816045334",
+    "clientName": "Prosegur Chile",
+    "name": "Prosegur Chile",
+    "value": 94477,
+    "stage": "SQL",
+    "closedate": "2026-01-05",
+    "currency": "USD"
+  },
+  {
+    "id": "46570162445",
+    "clientName": "Craighouse - GetNet",
+    "name": "Craighouse - GetNet",
+    "value": 47377,
+    "stage": "SQL",
+    "closedate": "2025-11-10",
+    "currency": "USD"
+  },
+  {
+    "id": "46566411643",
+    "clientName": "VDCH - Matrículas",
+    "name": "VDCH - Matrículas",
+    "value": 496,
+    "stage": "SQL",
+    "closedate": "2025-10-30",
+    "currency": "USD"
+  },
+  {
+    "id": "46061272649",
+    "clientName": "Versu AI",
+    "name": "Versu AI",
+    "value": 9344,
+    "stage": "SQL",
+    "closedate": "2025-10-27",
+    "currency": "USD"
+  },
+  {
+    "id": "45672601866",
+    "clientName": "Kumquat Inmobiliaria",
+    "name": "Kumquat Inmobiliaria",
+    "value": 8000,
+    "stage": "SQL",
+    "closedate": "2025-11-06",
+    "currency": "USD"
+  },
+  {
+    "id": "45138866335",
+    "clientName": "Colegio Coya",
+    "name": "Colegio Coya",
+    "value": 26099,
+    "stage": "SQL",
+    "closedate": "2025-11-18",
+    "currency": "USD"
+  },
+  {
+    "id": "44874835278",
+    "clientName": "Anglo American School",
+    "name": "Anglo American School",
+    "value": 5839,
+    "stage": "SQL",
+    "closedate": "2025-11-12",
+    "currency": "USD"
+  },
+  {
+    "id": "44845865276",
+    "clientName": "Smart CFO",
+    "name": "Smart CFO",
+    "value": 8818,
+    "stage": "SQL",
+    "closedate": "2025-10-23",
+    "currency": "USD"
+  },
+  {
+    "id": "44567330383",
+    "clientName": "Club de golf Los Lirios",
+    "name": "Club de golf Los Lirios",
+    "value": 8000,
+    "stage": "SQL",
+    "closedate": "2025-11-06",
+    "currency": "USD"
+  },
+  {
+    "id": "44545210775",
+    "clientName": "Educación Continua PUC",
+    "name": "Educación Continua PUC",
+    "value": 163453,
+    "stage": "SQL",
+    "closedate": "2026-02-10",
+    "currency": "USD"
+  },
+  {
+    "id": "43858695994",
+    "clientName": "Chattigo",
+    "name": "Chattigo",
+    "value": 17139,
+    "stage": "SQL",
+    "closedate": "2025-09-24",
+    "currency": "USD"
+  },
+  {
+    "id": "43285389853",
+    "clientName": "DS Chillán",
+    "name": "DS Chillán",
+    "value": 26492,
+    "stage": "SQL",
+    "closedate": "2025-11-04",
+    "currency": "USD"
+  },
+  {
+    "id": "41879533897",
+    "clientName": "Andreé English School",
+    "name": "Andreé English School",
+    "value": 16000,
+    "stage": "SQL",
+    "closedate": "2025-10-13",
+    "currency": "USD"
+  },
+  {
+    "id": "41693726979",
+    "clientName": "U. del Alba",
+    "name": "Universidad del Alba",
+    "value": 147360,
+    "stage": "Opportunity",
+    "closedate": "2026-04-30",
     "currency": "USD"
   },
   {
@@ -171,12 +360,687 @@
     "currency": "USD"
   },
   {
+    "id": "41523256589",
+    "clientName": "Colegio San Benito",
+    "name": "Colegio San Benito",
+    "value": 55889,
+    "stage": "SQL",
+    "closedate": "2025-10-13",
+    "currency": "USD"
+  },
+  {
+    "id": "41461072044",
+    "clientName": "Soltecsa",
+    "name": "Soltecsa",
+    "value": 24930,
+    "stage": "SQL",
+    "closedate": "2025-09-17",
+    "currency": "USD"
+  },
+  {
+    "id": "41420940588",
+    "clientName": "Colegio Barrie Montessori",
+    "name": "Colegio Barrie Montessori",
+    "value": 12941,
+    "stage": "SQL",
+    "closedate": "2025-08-18",
+    "currency": "USD"
+  },
+  {
+    "id": "41114812306",
+    "clientName": "Saint John's School",
+    "name": "Saint John's School",
+    "value": 41757,
+    "stage": "SQL",
+    "closedate": "2025-08-25",
+    "currency": "USD"
+  },
+  {
+    "id": "40980458786",
+    "clientName": "Apanio",
+    "name": "Apanio",
+    "value": 2673,
+    "stage": "SQL",
+    "closedate": "2025-09-17",
+    "currency": "USD"
+  },
+  {
+    "id": "40977646869",
+    "clientName": "IP Valle Central - Nuevo Core + Mensajería",
+    "name": "IP Valle Central - Nuevo Core + Mensajería",
+    "value": 899,
+    "stage": "SQL",
+    "closedate": "2025-08-21",
+    "currency": "USD"
+  },
+  {
+    "id": "40841839631",
+    "clientName": "UACH",
+    "name": "UACH",
+    "value": 121016,
+    "stage": "SQL",
+    "closedate": "2026-03-11",
+    "currency": "USD"
+  },
+  {
+    "id": "40584965269",
+    "clientName": "Colegio San Damián",
+    "name": "Colegio San Damián",
+    "value": 15463,
+    "stage": "SQL",
+    "closedate": "2025-10-21",
+    "currency": "USD"
+  },
+  {
+    "id": "39689697185",
+    "clientName": "CFT Estatal de Arica y Parinacota",
+    "name": "CFT Estatal de Arica y Parinacota",
+    "value": 9731,
+    "stage": "SQL",
+    "closedate": "2025-11-04",
+    "currency": "USD"
+  },
+  {
+    "id": "39221513640",
+    "clientName": "UCSH",
+    "name": "UCSH",
+    "value": 17980,
+    "stage": "SQL",
+    "closedate": "2025-12-17",
+    "currency": "USD"
+  },
+  {
+    "id": "39209862662",
+    "clientName": "IPG - Botón página web",
+    "name": "IPG - Botón página web",
+    "value": 13993,
+    "stage": "SQL",
+    "closedate": "2025-07-04",
+    "currency": "USD"
+  },
+  {
+    "id": "38984375097",
+    "clientName": "Uniacc Portales Múltiples - Congresos",
+    "name": "Uniacc Portales Múltiples - Congresos",
+    "value": 1476,
+    "stage": "SQL",
+    "closedate": "2025-07-17",
+    "currency": "USD"
+  },
+  {
+    "id": "38816516625",
+    "clientName": "Colegio Alliance La Serena",
+    "name": "Colegio Alliance La Serena",
+    "value": 12730,
+    "stage": "SQL",
+    "closedate": "2025-07-21",
+    "currency": "USD"
+  },
+  {
+    "id": "38765982237",
+    "clientName": "Alianza Francesa Curicó",
+    "name": "Alianza Francesa Curicó",
+    "value": 25162,
+    "stage": "SQL",
+    "closedate": "2025-06-30",
+    "currency": "USD"
+  },
+  {
+    "id": "38733360459",
+    "clientName": "CFT Maule",
+    "name": "CFT Maule",
+    "value": 7267,
+    "stage": "SQL",
+    "closedate": "2025-07-24",
+    "currency": "USD"
+  },
+  {
+    "id": "38528647210",
+    "clientName": "Colegio Puerto Varas - SIAE",
+    "name": "Colegio Puerto Varas - SIAE",
+    "value": 30074,
+    "stage": "SQL",
+    "closedate": "2025-10-22",
+    "currency": "USD"
+  },
+  {
+    "id": "38384722043",
+    "clientName": "Contempora Seguros | Cartera Dólares",
+    "name": "Contempora Seguros | Cartera Dólares",
+    "value": 8103,
+    "stage": "SQL",
+    "closedate": "2025-07-11",
+    "currency": "USD"
+  },
+  {
+    "id": "38318911658",
+    "clientName": "SSCC La Serena",
+    "name": "SSCC La Serena",
+    "value": 15534,
+    "stage": "SQL",
+    "closedate": "2025-06-06",
+    "currency": "USD"
+  },
+  {
+    "id": "37358035047",
+    "clientName": "Chantilly - Distribuidores y Empresas",
+    "name": "Chantilly - Distribuidores y Empresas",
+    "value": 42743,
+    "stage": "SQL",
+    "closedate": "2025-06-18",
+    "currency": "USD"
+  },
+  {
+    "id": "36610090404",
+    "clientName": "Amipos",
+    "name": "Amipos",
+    "value": 12180,
+    "stage": "SQL",
+    "closedate": "2025-08-13",
+    "currency": "USD"
+  },
+  {
+    "id": "36532053848",
+    "clientName": "Greystar Chile",
+    "name": "Greystar Chile",
+    "value": 91534,
+    "stage": "SQL",
+    "closedate": "2025-05-25",
+    "currency": "USD"
+  },
+  {
+    "id": "35836024984",
+    "clientName": "UCSC",
+    "name": "UCSC",
+    "value": 45408,
+    "stage": "SQL",
+    "closedate": "2025-09-17",
+    "currency": "USD"
+  },
+  {
+    "id": "35849473322",
+    "clientName": "DockCharged",
+    "name": "DockCharged",
+    "value": 9264,
+    "stage": "SQL",
+    "closedate": "2025-05-15",
+    "currency": "USD"
+  },
+  {
+    "id": "35836887083",
+    "clientName": "Craighouse",
+    "name": "Craighouse",
+    "value": 47942,
+    "stage": "SQL",
+    "closedate": "2025-08-29",
+    "currency": "USD"
+  },
+  {
+    "id": "35835601316",
+    "clientName": "IPP",
+    "name": "Instituto Profesional IPP",
+    "value": 110343,
+    "stage": "Opportunity",
+    "closedate": "2026-05-12",
+    "currency": "USD"
+  },
+  {
+    "id": "35831313486",
+    "clientName": "Health Intelligence Solutions",
+    "name": "Health Intelligence Solutions",
+    "value": 8162,
+    "stage": "SQL",
+    "closedate": "2025-05-20",
+    "currency": "USD"
+  },
+  {
+    "id": "35754603583",
+    "clientName": "UDLA Cross DD / Transferencias",
+    "name": "UDLA Cross DD / Transferencias",
+    "value": 16000,
+    "stage": "SQL",
+    "closedate": "2025-06-18",
+    "currency": "USD"
+  },
+  {
+    "id": "35591674388",
+    "clientName": "CFT Biobío",
+    "name": "CFT Biobío",
+    "value": 6191,
+    "stage": "SQL",
+    "closedate": "2025-07-09",
+    "currency": "USD"
+  },
+  {
+    "id": "35576409922",
+    "clientName": "Universidad Adolfo Ibañez Etapa 1 | Iframe",
+    "name": "Universidad Adolfo Ibañez Etapa 1 | Iframe",
+    "value": 16000,
+    "stage": "SQL",
+    "closedate": "2025-06-11",
+    "currency": "USD"
+  },
+  {
+    "id": "35360869551",
+    "clientName": "PdV PRM",
+    "name": "Preuniversitario Pedro de Valdivia PRM",
+    "value": 489880,
+    "stage": "SQL",
+    "closedate": "2026-07-31",
+    "currency": "USD"
+  },
+  {
+    "id": "34908870728",
+    "clientName": "Contempora Seguros Campaña One Time + Toggle Switch",
+    "name": "Contempora Seguros Campaña One Time + Toggle Switch",
+    "value": 4292,
+    "stage": "SQL",
+    "closedate": "2025-03-25",
+    "currency": "USD"
+  },
+  {
+    "id": "34832998283",
+    "clientName": "CFT Araucanía",
+    "name": "CFT Araucanía",
+    "value": 5927,
+    "stage": "SQL",
+    "closedate": "2025-07-22",
+    "currency": "USD"
+  },
+  {
+    "id": "34468551477",
+    "clientName": "Parroquia Santa Madre de Dios",
+    "name": "Parroquia Santa Madre de Dios",
+    "value": -111,
+    "stage": "SQL",
+    "closedate": "2025-04-07",
+    "currency": "USD"
+  },
+  {
+    "id": "34361326919",
+    "clientName": "CFT Coquimbo",
+    "name": "CFT Coquimbo",
+    "value": 5908,
+    "stage": "SQL",
+    "closedate": "2025-08-04",
+    "currency": "USD"
+  },
+  {
+    "id": "34054573240",
+    "clientName": "CFT Estatal Tarapacá",
+    "name": "CFT Estatal Tarapacá",
+    "value": 6234,
+    "stage": "SQL",
+    "closedate": "2025-08-13",
+    "currency": "USD"
+  },
+  {
+    "id": "33890567945",
+    "clientName": "Rilay Inmobiliaria",
+    "name": "Rilay Inmobiliaria",
+    "value": 4611,
+    "stage": "SQL",
+    "closedate": "2025-03-31",
+    "currency": "USD"
+  },
+  {
+    "id": "33789855069",
+    "clientName": "Clickhouse (Holding Federal)",
+    "name": "Clickhouse (Holding Federal)",
+    "value": 2016,
+    "stage": "SQL",
+    "closedate": "2025-03-11",
+    "currency": "USD"
+  },
+  {
+    "id": "33114306413",
+    "clientName": "Aramark",
+    "name": "Aramark",
+    "value": 4930,
+    "stage": "SQL",
+    "closedate": "2025-03-24",
+    "currency": "USD"
+  },
+  {
+    "id": "32973265991",
+    "clientName": "CFT PUCV - Migración V3",
+    "name": "CFT PUCV - Migración V3",
+    "value": 27455,
+    "stage": "SQL",
+    "closedate": "2026-03-03",
+    "currency": "USD"
+  },
+  {
+    "id": "32630305411",
+    "clientName": "Think-e inglés Chile",
+    "name": "Think-e inglés Chile",
+    "value": 15916,
+    "stage": "SQL",
+    "closedate": "2025-03-31",
+    "currency": "USD"
+  },
+  {
+    "id": "32511554886",
+    "clientName": "Universidad Católica Valparaíso",
+    "name": "Universidad Católica Valparaíso",
+    "value": 95052,
+    "stage": "SQL",
+    "closedate": "2025-08-01",
+    "currency": "USD"
+  },
+  {
     "id": "32300592005",
     "clientName": "U. Magallanes",
     "name": "Universidad de Magallanes",
     "value": 61747,
     "stage": "Cliente Activo",
     "closedate": "2026-03-16",
+    "currency": "USD"
+  },
+  {
+    "id": "32299407759",
+    "clientName": "Owner Home",
+    "name": "Owner Home",
+    "value": 8371,
+    "stage": "SQL",
+    "closedate": "2025-03-31",
+    "currency": "USD"
+  },
+  {
+    "id": "32254185145",
+    "clientName": "Universidad Adolfo Ibañez",
+    "name": "Universidad Adolfo Ibañez",
+    "value": 232066,
+    "stage": "SQL",
+    "closedate": "2025-04-08",
+    "currency": "USD"
+  },
+  {
+    "id": "32110498434",
+    "clientName": "UNIVERSIDAD UNIACC",
+    "name": "UNIVERSIDAD UNIACC",
+    "value": 13489,
+    "stage": "SQL",
+    "closedate": "2025-03-21",
+    "currency": "USD"
+  },
+  {
+    "id": "31675291783",
+    "clientName": "Coonfia",
+    "name": "Coonfia",
+    "value": 32475,
+    "stage": "SQL",
+    "closedate": "2025-03-17",
+    "currency": "USD"
+  },
+  {
+    "id": "30947308835",
+    "clientName": "Aldeas Infantiles SOS Chile",
+    "name": "Aldeas Infantiles SOS Chile",
+    "value": 28260,
+    "stage": "SQL",
+    "closedate": "2025-02-10",
+    "currency": "USD"
+  },
+  {
+    "id": "30733614210",
+    "clientName": "Colegio Montessori Talca",
+    "name": "Colegio Montessori Talca",
+    "value": 38412,
+    "stage": "SQL",
+    "closedate": "2025-04-22",
+    "currency": "USD"
+  },
+  {
+    "id": "30599020597",
+    "clientName": "Colegio Carampangue",
+    "name": "Colegio Carampangue",
+    "value": 35003,
+    "stage": "SQL",
+    "closedate": "2025-02-28",
+    "currency": "USD"
+  },
+  {
+    "id": "30224211261",
+    "clientName": "Inmobiliaria Ecomac",
+    "name": "Inmobiliaria Ecomac",
+    "value": 8000,
+    "stage": "SQL",
+    "closedate": "2025-02-26",
+    "currency": "USD"
+  },
+  {
+    "id": "30135799917",
+    "clientName": "Corredora De Seguros Universal",
+    "name": "Corredora De Seguros Universal",
+    "value": 6563,
+    "stage": "SQL",
+    "closedate": "2025-03-04",
+    "currency": "USD"
+  },
+  {
+    "id": "30048137343",
+    "clientName": "Quinta Casa",
+    "name": "Quinta Casa",
+    "value": 13748,
+    "stage": "SQL",
+    "closedate": "2025-02-13",
+    "currency": "USD"
+  },
+  {
+    "id": "29887286423",
+    "clientName": "Cpech 2025",
+    "name": "Cpech 2025",
+    "value": 41200,
+    "stage": "SQL",
+    "closedate": "2024-12-17",
+    "currency": "USD"
+  },
+  {
+    "id": "29801079191",
+    "clientName": "Colegio Mariano de Schoenstatt",
+    "name": "Colegio Mariano de Schoenstatt",
+    "value": 8000,
+    "stage": "SQL",
+    "closedate": "2025-01-20",
+    "currency": "USD"
+  },
+  {
+    "id": "29242235160",
+    "clientName": "Universidad Diego Portales",
+    "name": "Universidad Diego Portales",
+    "value": 0,
+    "stage": "SQL",
+    "closedate": "2025-01-07",
+    "currency": "USD"
+  },
+  {
+    "id": "29111259985",
+    "clientName": "Deutsche Schule Temuco (Alexia)",
+    "name": "Deutsche Schule Temuco (Alexia)",
+    "value": 28802,
+    "stage": "SQL",
+    "closedate": "2025-05-08",
+    "currency": "USD"
+  },
+  {
+    "id": "29053175071",
+    "clientName": "Colegio San Ignacio Alonso de Ovalle",
+    "name": "Colegio San Ignacio Alonso de Ovalle",
+    "value": 38901,
+    "stage": "SQL",
+    "closedate": "2025-04-22",
+    "currency": "USD"
+  },
+  {
+    "id": "28980162108",
+    "clientName": "Colegio Barrie Montessori",
+    "name": "Colegio Barrie Montessori",
+    "value": 0,
+    "stage": "SQL",
+    "closedate": "2024-11-26",
+    "currency": "USD"
+  },
+  {
+    "id": "28969254430",
+    "clientName": "Corpeduff",
+    "name": "Corpeduff",
+    "value": 49384,
+    "stage": "SQL",
+    "closedate": "2025-08-14",
+    "currency": "USD"
+  },
+  {
+    "id": "28943305567",
+    "clientName": "Club Palestino Ramas Deportivas",
+    "name": "Club Palestino Ramas Deportivas",
+    "value": 27061,
+    "stage": "SQL",
+    "closedate": "2025-04-02",
+    "currency": "USD"
+  },
+  {
+    "id": "28939069336",
+    "clientName": "ECAS Nueva Propuesta",
+    "name": "ECAS Nueva Propuesta",
+    "value": 9074,
+    "stage": "SQL",
+    "closedate": "2025-04-04",
+    "currency": "USD"
+  },
+  {
+    "id": "28876565838",
+    "clientName": "Colegios Arzobispado",
+    "name": "Colegios Arzobispado",
+    "value": 30793,
+    "stage": "SQL",
+    "closedate": "2025-01-06",
+    "currency": "USD"
+  },
+  {
+    "id": "28673354838",
+    "clientName": "Farmland School",
+    "name": "Farmland School",
+    "value": 10400,
+    "stage": "SQL",
+    "closedate": "2025-02-26",
+    "currency": "USD"
+  },
+  {
+    "id": "28534696623",
+    "clientName": "Colegio Capellan Pascal",
+    "name": "Colegio Capellan Pascal",
+    "value": 11734,
+    "stage": "SQL",
+    "closedate": "2025-01-02",
+    "currency": "USD"
+  },
+  {
+    "id": "28418849152",
+    "clientName": "Fundación DOCERE",
+    "name": "Fundación DOCERE",
+    "value": 0,
+    "stage": "SQL",
+    "closedate": "2025-04-02",
+    "currency": "USD"
+  },
+  {
+    "id": "28360066485",
+    "clientName": "Buonavita",
+    "name": "Buonavita",
+    "value": 11748,
+    "stage": "SQL",
+    "closedate": "2025-01-15",
+    "currency": "USD"
+  },
+  {
+    "id": "28367433085",
+    "clientName": "Yapo.cl",
+    "name": "Yapo.cl",
+    "value": 5350,
+    "stage": "SQL",
+    "closedate": "2025-02-21",
+    "currency": "USD"
+  },
+  {
+    "id": "28341461687",
+    "clientName": "Federal",
+    "name": "Federal",
+    "value": 178362,
+    "stage": "SQL",
+    "closedate": "2025-05-02",
+    "currency": "USD"
+  },
+  {
+    "id": "28330013530",
+    "clientName": "Colegio San Luis de Alba",
+    "name": "Colegio San Luis de Alba",
+    "value": 7644,
+    "stage": "SQL",
+    "closedate": "2024-11-27",
+    "currency": "USD"
+  },
+  {
+    "id": "28299001965",
+    "clientName": "Universidad Mayor | Gestión PAC-PAT",
+    "name": "Universidad Mayor | Gestión PAC-PAT",
+    "value": 54313,
+    "stage": "SQL",
+    "closedate": "2025-10-23",
+    "currency": "USD"
+  },
+  {
+    "id": "28249740606",
+    "clientName": "Universidad Austral de Chile",
+    "name": "Universidad Austral de Chile",
+    "value": 122754,
+    "stage": "SQL",
+    "closedate": "2025-03-31",
+    "currency": "USD"
+  },
+  {
+    "id": "23317523508",
+    "clientName": "CFT Estatal Región de Valparaíso",
+    "name": "CFT Estatal Región de Valparaíso",
+    "value": 6364,
+    "stage": "SQL",
+    "closedate": "2024-12-23",
+    "currency": "USD"
+  },
+  {
+    "id": "23007994240",
+    "clientName": "Colegio Saint Gabriel's",
+    "name": "Colegio Saint Gabriel's",
+    "value": 51981,
+    "stage": "SQL",
+    "closedate": "2025-06-23",
+    "currency": "USD"
+  },
+  {
+    "id": "21930987579",
+    "clientName": "Universidad Santo Tomás",
+    "name": "Universidad Santo Tomás",
+    "value": 93006,
+    "stage": "SQL",
+    "closedate": "2025-07-07",
+    "currency": "USD"
+  },
+  {
+    "id": "20610085534",
+    "clientName": "Aguas Nuevas",
+    "name": "Aguas Nuevas",
+    "value": 20962,
+    "stage": "SQL",
+    "closedate": "2025-03-21",
+    "currency": "USD"
+  },
+  {
+    "id": "15849709937",
+    "clientName": "Coonfia",
+    "name": "Coonfia",
+    "value": 40083,
+    "stage": "SQL",
+    "closedate": "2025-01-08",
     "currency": "USD"
   }
 ]

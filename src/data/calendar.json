@@ -1,338 +1,30 @@
 [
   {
-    "id": "1ckjgmrl3g4mtjsq93bl0us2qf",
-    "title": "Preparar UDALBA BC enviable",
-    "start": "2026-03-20T10:15:00-03:00",
-    "end": "2026-03-20T11:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "6rhv98nc75bmfiopmhfd0atil2",
-    "title": "Seguimiento CFT",
-    "start": "2026-03-20T11:00:00-03:00",
-    "end": "2026-03-20T11:45:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "7g2viqlg3e59oni9dg09jqojn2",
-    "title": "Contexto Iplacex",
-    "start": "2026-03-20T11:30:00-03:00",
-    "end": "2026-03-20T11:45:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "2k48gi8fshc5bjkimvq2a3r8od",
-    "title": "Visita sopresa IPVC",
-    "start": "2026-03-20T12:15:00-03:00",
-    "end": "2026-03-20T13:15:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "4dl8qhgui0jgq1al8l0o01khje_20260320T153000Z",
-    "title": "[Interno] Completar Semanal",
-    "start": "2026-03-20T12:30:00-03:00",
-    "end": "2026-03-20T13:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260320T160000Z",
-    "title": "🍔 Almuerzo",
-    "start": "2026-03-20T13:00:00-03:00",
-    "end": "2026-03-20T14:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "42us3go94d3rc5g3f24qvm4okn_20260320T173000Z",
-    "title": "Toku <> UMag - Daily Integración",
-    "start": "2026-03-20T15:00:00-03:00",
-    "end": "2026-03-20T15:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "4t5c3b5tilut45oijmao4olerb",
-    "title": "Craighouse - Toku",
-    "start": "2026-03-20T15:00:00-03:00",
-    "end": "2026-03-20T15:15:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "2a9emqgela0kn7rosb3323akrv",
-    "title": "Prep Iplacex",
-    "start": "2026-03-23T09:00:00-03:00",
-    "end": "2026-03-23T09:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "0s9tqh5kmcf3lpekp7crp06gns",
-    "title": "Revisión auditoría Iplacex - Toku",
-    "start": "2026-03-23T09:30:00-03:00",
-    "end": "2026-03-23T10:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "57ofdiapjjvf9hoocb2avl34ms",
-    "title": "Toku <> UVM - Workshop",
-    "start": "2026-03-23T10:00:00-03:00",
-    "end": "2026-03-23T13:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260323T160000Z",
-    "title": "🍔 Almuerzo",
-    "start": "2026-03-23T13:00:00-03:00",
-    "end": "2026-03-23T14:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "3nlfj3n883drtsu795kpdrrj73",
-    "title": "Prep CFT Araucania",
-    "start": "2026-03-23T14:00:00-03:00",
-    "end": "2026-03-23T14:15:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "7bbhnrbj9tkt3kagdh1lcaliq7",
-    "title": "Revisión Licitación Municipalidad San Miguel",
-    "start": "2026-03-23T15:30:00-03:00",
-    "end": "2026-03-23T15:50:00-03:00",
-    "location": "Oficina Toku Chile-Piso 15-P15 - PB 2 - Loica (4)"
-  },
-  {
-    "id": "6svqlqgup2blme44et3jd6vro2_20260320T121500Z",
-    "title": "Toku | UCSH: Checkin Semanal",
-    "start": "2026-03-23T16:00:00-03:00",
-    "end": "2026-03-23T17:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "7quvpbtemji8q8a1s3sse6nlv0_20260323T193000Z",
-    "title": "Semanal Gian - Juanito ",
-    "start": "2026-03-23T16:30:00-03:00",
-    "end": "2026-03-23T17:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "3mfci3m490ioiq6icc1hth93om",
-    "title": "Prep UCM + U andes",
-    "start": "2026-03-23T17:00:00-03:00",
-    "end": "2026-03-23T17:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "42us3go94d3rc5g3f24qvm4okn_20260323T173000Z",
-    "title": "Toku <> UMag - Daily Integración",
-    "start": "2026-03-23T17:00:00-03:00",
-    "end": "2026-03-23T17:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "cf4t44chccaqgd3dq93i5pthkc_20260323T201500Z",
-    "title": "Salescamp Chile ",
-    "start": "2026-03-23T17:15:00-03:00",
-    "end": "2026-03-23T18:15:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "2abu80rgs8j8vr754nctphag68",
-    "title": "Prep BR Bibliote",
-    "start": "2026-03-24T09:00:00-03:00",
-    "end": "2026-03-24T09:15:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "jesal6ipkicjp2vj8fca9uvfl1_20260323T123000Z",
-    "title": "Prep GTM semanal",
-    "start": "2026-03-24T09:00:00-03:00",
-    "end": "2026-03-24T09:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "1nitvtt5pbqko9ibb14t0k08ub_20260324T130000Z",
-    "title": "TOKU | IPSS: Check-in Semanal",
-    "start": "2026-03-24T10:00:00-03:00",
-    "end": "2026-03-24T10:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "6ser7rmgaq9vhvlhv3s79dfqp3",
-    "title": "U de los Andes - Toku",
-    "start": "2026-03-24T10:00:00-03:00",
-    "end": "2026-03-24T11:00:00-03:00",
-    "location": "Oficina Toku Chile-Piso 15-P15 - Sala D - Valparaíso (4)"
-  },
-  {
-    "id": "_60q30c1g60o30e1i60o4ac1g60rj8gpl88rj2c1h84s34h9g60s30c1g60o30c1g6oq36hi360r30cq488r48gpg64o30c1g60o30c1g60o30c1g60o32c1g60o30c1g6co38ha16ssk8ghg6op46e9k6os38e1h60rk6da670sk2cq470p0",
-    "title": "Reunión Toku - Universidad de los Andes",
-    "start": "2026-03-24T10:00:00-03:00",
-    "end": "2026-03-24T11:00:00-03:00",
-    "location": "Reunión de Microsoft Teams"
-  },
-  {
-    "id": "7harl67360vdiislqvtg41t20s_20260324T140000Z",
-    "title": "Semanal IPG - Toku ",
-    "start": "2026-03-24T11:00:00-03:00",
-    "end": "2026-03-24T11:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "c6m0seu0555jac0as6vcdksosb_20260324T143000Z",
-    "title": "Toku | CFT RM: Check-in Semanal",
-    "start": "2026-03-24T11:30:00-03:00",
-    "end": "2026-03-24T12:00:00-03:00",
-    "location": "Oficina Toku Chile-Piso 15-P15 - PB 1 - Cóndor (4)"
-  },
-  {
-    "id": "6pgjiohl68s66bb1chij8b9k64o36bb2cpgj2b9kcoqjip316pj3ccpo68",
-    "title": "Reunión Toku <> CFT Araucanía",
-    "start": "2026-03-24T12:00:00-03:00",
-    "end": "2026-03-24T12:45:00-03:00",
-    "location": "https://meet.google.com/weu-wsqp-qsx"
-  },
-  {
-    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260324T160000Z",
-    "title": "🍔 Almuerzo",
-    "start": "2026-03-24T13:00:00-03:00",
-    "end": "2026-03-24T14:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "42us3go94d3rc5g3f24qvm4okn_20260324T173000Z",
-    "title": "Toku <> UMag - Daily Integración",
-    "start": "2026-03-24T14:30:00-03:00",
-    "end": "2026-03-24T15:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "0h9vhcfdcofsd9mm8cm0kr6hn1_20260324T180000Z",
-    "title": "GTM CL C5 (Educación y Goods) ",
-    "start": "2026-03-24T15:00:00-03:00",
-    "end": "2026-03-24T16:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "6ph3acb268p6ab9g6hgj2b9k6dh6cbb26gqm4b9gc4r64e1j6kp3ge36co",
-    "title": "UCM <> Toku",
-    "start": "2026-03-24T16:00:00-03:00",
-    "end": "2026-03-24T17:00:00-03:00",
-    "location": "https://meet.google.com/etk-hmnz-bmg, Oficina Toku Chile-Piso 15-P15 - Sala D - Valparaíso (4)"
-  },
-  {
-    "id": "_60q30c1g60o30e1i60o4ac1g60rj8gpl88rj2c1h84s34h9g60s30c1g60o30c1g8go46da56h0k8hi288r48gpg64o30c1g60o30c1g60o30c1g60o32c1g60o30c1g88sjiga364oj0d9m60s46chk8l146di3891k8ghg84ok4c1p8d2g",
-    "title": "Solicitud: Descripción y temporalidad de comunicaciones automáticas a alumnos",
-    "start": "2026-03-24T17:00:00-03:00",
-    "end": "2026-03-24T18:00:00-03:00",
-    "location": "Reunión de Microsoft Teams"
-  },
-  {
-    "id": "64q30pb2c8rmab9h6gq3eb9kcph3ib9oc5gmcbb36dhmachjc5hm2cr670",
-    "title": "Revisión Técnica EMM <> Toku",
-    "start": "2026-03-25T09:00:00-03:00",
-    "end": "2026-03-25T09:30:00-03:00",
-    "location": "https://meet.google.com/bfu-cgfz-jvd"
-  },
-  {
-    "id": "7jgfrsj897t2aj0nd38pvs8lbt",
-    "title": "Vacuna",
-    "start": "2026-03-25T09:00:00-03:00",
-    "end": "2026-03-25T09:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "1geqtgl9jkuqddoc49akglq5o8",
-    "title": "[Placeholder] UDALBA + Fco",
-    "start": "2026-03-25T10:00:00-03:00",
-    "end": "2026-03-25T11:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "5vglb6plhv7o305cl0i422unl2",
-    "title": "Revisión Caso de Negocios UDALBA <> Toku",
-    "start": "2026-03-25T10:00:00-03:00",
-    "end": "2026-03-25T11:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "7r46qvijslsgp4tm9fbr4cgkjm_20260325T140000Z",
-    "title": "Seguimiento Toku <> Craighouse",
-    "start": "2026-03-25T11:00:00-03:00",
-    "end": "2026-03-25T12:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260325T160000Z",
-    "title": "🍔 Almuerzo",
-    "start": "2026-03-25T13:00:00-03:00",
-    "end": "2026-03-25T14:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "42us3go94d3rc5g3f24qvm4okn_20260325T173000Z",
-    "title": "Toku <> UMag - Daily Integración",
-    "start": "2026-03-25T14:30:00-03:00",
-    "end": "2026-03-25T15:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "1hl3e2p0dj08gnurmkb8e7h65v",
-    "title": "ElBibliote <> Toku | BR",
-    "start": "2026-03-25T16:00:00-03:00",
-    "end": "2026-03-25T16:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "27u5sn0i2ifsjgofu4fhvakkn5",
-    "title": "Reunión técnica eClass <> Toku",
-    "start": "2026-03-26T11:00:00-03:00",
-    "end": "2026-03-26T12:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "6ooj8eb475h30b9m64pjeb9kcopmcbb2c5j34b9icpj3idhj70o3adphc4_20260326T140000Z",
-    "title": "Check-in Semanal Greenhouse <> Toku",
-    "start": "2026-03-26T11:00:00-03:00",
-    "end": "2026-03-26T11:30:00-03:00",
-    "location": "https://meet.google.com/fco-agav-hzm, Oficina Toku Chile-Piso 15-P15 - Sala D - Valparaíso (4)"
-  },
-  {
-    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260326T160000Z",
-    "title": "🍔 Almuerzo",
-    "start": "2026-03-26T13:00:00-03:00",
-    "end": "2026-03-26T14:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "42us3go94d3rc5g3f24qvm4okn_20260326T173000Z",
-    "title": "Toku <> UMag - Daily Integración",
-    "start": "2026-03-26T14:30:00-03:00",
-    "end": "2026-03-26T15:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "6ig8gc8skelmeehj477l7v6kk0",
-    "title": "Revisión mejoras UNIACC <> Toku",
-    "start": "2026-03-26T15:30:00-03:00",
-    "end": "2026-03-26T16:30:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "cmndelnljo5g85m19ucm0fsc7u_20260326T190000Z",
-    "title": "All Hands Chile",
-    "start": "2026-03-26T16:00:00-03:00",
-    "end": "2026-03-26T17:00:00-03:00",
-    "location": ""
-  },
-  {
-    "id": "496ucuqmeguqrug727areb7lje",
-    "title": "Contestar Andrés Morin",
-    "start": "2026-03-27T08:45:00-03:00",
-    "end": "2026-03-27T09:00:00-03:00",
-    "location": ""
-  },
-  {
     "id": "6svqlqgup2blme44et3jd6vro2_20260327T121500Z",
     "title": "Toku | UCSH: Checkin Semanal",
     "start": "2026-03-27T09:15:00-03:00",
     "end": "2026-03-27T10:15:00-03:00",
+    "location": ""
+  },
+  {
+    "id": "4qf2o54uhkjttfmo4768sr6n2a",
+    "title": "Facturación MAT21 y otros pendientes",
+    "start": "2026-03-27T11:30:00-03:00",
+    "end": "2026-03-27T12:00:00-03:00",
+    "location": ""
+  },
+  {
+    "id": "3gdih5s9gjeah56n9qplcoqnpo",
+    "title": "PreUC <> Toku",
+    "start": "2026-03-27T12:00:00-03:00",
+    "end": "2026-03-27T12:30:00-03:00",
+    "location": ""
+  },
+  {
+    "id": "2sdseo5fd641gkuaij1aigb1mr",
+    "title": "IPG - Toku secuencia",
+    "start": "2026-03-27T12:30:00-03:00",
+    "end": "2026-03-27T13:00:00-03:00",
     "location": ""
   },
   {
@@ -350,11 +42,25 @@
     "location": ""
   },
   {
+    "id": "64693ie3easjlkktectv3gbd0v",
+    "title": "Prep consultoría UCM",
+    "start": "2026-03-27T14:00:00-03:00",
+    "end": "2026-03-27T14:30:00-03:00",
+    "location": ""
+  },
+  {
     "id": "42us3go94d3rc5g3f24qvm4okn_20260327T173000Z",
     "title": "Toku <> UMag - Daily Integración",
     "start": "2026-03-27T14:30:00-03:00",
     "end": "2026-03-27T15:00:00-03:00",
     "location": ""
+  },
+  {
+    "id": "6fm7m3hqlmh8h87ar8u530uc39",
+    "title": "Coordinar Pasajes Concepción",
+    "start": "2026-03-30T12:30:00-03:00",
+    "end": "2026-03-30T13:00:00-03:00",
+    "location": "Oficina Toku Chile-Piso 15-P15 - Sala C - Isla de Pascua (4)"
   },
   {
     "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260330T160000Z",
@@ -371,6 +77,20 @@
     "location": ""
   },
   {
+    "id": "1m1ihtkeg7r2dgsc8asebsiiaj",
+    "title": "Prep PW Q2",
+    "start": "2026-03-30T15:00:00-03:00",
+    "end": "2026-03-30T15:30:00-03:00",
+    "location": ""
+  },
+  {
+    "id": "62tj28n4ntieaqjr6lb5jcbgr8",
+    "title": "Toku <> UVM - Seguimiento semanal",
+    "start": "2026-03-30T15:00:00-03:00",
+    "end": "2026-03-30T16:00:00-03:00",
+    "location": ""
+  },
+  {
     "id": "7quvpbtemji8q8a1s3sse6nlv0_20260330T193000Z",
     "title": "Semanal Gian - Juanito ",
     "start": "2026-03-30T16:30:00-03:00",
@@ -379,10 +99,10 @@
   },
   {
     "id": "cf4t44chccaqgd3dq93i5pthkc_20260330T201500Z",
-    "title": "Salescamp Chile ",
+    "title": "Salescamp Chile - Cuotas comercio y Gestión cartera",
     "start": "2026-03-30T17:15:00-03:00",
     "end": "2026-03-30T18:15:00-03:00",
-    "location": ""
+    "location": "Oficina Toku Chile-Piso 16-P16 - Sala D - Torres del Paine (VC) (10)"
   },
   {
     "id": "1nitvtt5pbqko9ibb14t0k08ub_20260331T130000Z",
@@ -413,6 +133,13 @@
     "location": ""
   },
   {
+    "id": "64oj6oj360sjab9o68omcb9k68qjgb9pclhmabb4c4s6ccj46gr38c9kcc",
+    "title": "UCM <> Toku",
+    "start": "2026-03-31T16:00:00-03:00",
+    "end": "2026-03-31T17:00:00-03:00",
+    "location": "https://meet.google.com/eng-kbbb-oph"
+  },
+  {
     "id": "7r46qvijslsgp4tm9fbr4cgkjm_20260401T140000Z",
     "title": "Seguimiento Toku <> Craighouse",
     "start": "2026-04-01T11:00:00-03:00",
@@ -441,11 +168,32 @@
     "location": ""
   },
   {
+    "id": "6fca9mutn50bs8gdahv614sr9r",
+    "title": "Prep PW Q2",
+    "start": "2026-04-01T15:45:00-03:00",
+    "end": "2026-04-01T16:45:00-03:00",
+    "location": ""
+  },
+  {
+    "id": "25i0h95oqh926lqc9pfisg0he3",
+    "title": "OOO",
+    "start": "2026-04-02T00:00:00-03:00",
+    "end": "2026-04-03T00:00:00-03:00",
+    "location": ""
+  },
+  {
     "id": "6ooj8eb475h30b9m64pjeb9kcopmcbb2c5j34b9icpj3idhj70o3adphc4_20260402T140000Z",
     "title": "Check-in Semanal Greenhouse <> Toku",
     "start": "2026-04-02T11:00:00-03:00",
     "end": "2026-04-02T11:30:00-03:00",
     "location": "https://meet.google.com/fco-agav-hzm, Oficina Toku Chile-Piso 15-P15 - Sala D - Valparaíso (4)"
+  },
+  {
+    "id": "3m1q16su8dtnqngbidf3k7l2jm",
+    "title": "Almuerzo IPP - Toku",
+    "start": "2026-04-02T13:00:00-03:00",
+    "end": "2026-04-02T14:30:00-03:00",
+    "location": ""
   },
   {
     "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260402T160000Z",
@@ -487,6 +235,188 @@
     "title": "Toku <> UMag - Daily Integración",
     "start": "2026-04-03T14:30:00-03:00",
     "end": "2026-04-03T15:00:00-03:00",
+    "location": ""
+  },
+  {
+    "id": "3dt0o051fv2r8tq7mgpdclp02k_20260406T120000Z",
+    "title": "Levantamiento de eventos educación",
+    "start": "2026-04-06T08:00:00-04:00",
+    "end": "2026-04-06T08:30:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "jesal6ipkicjp2vj8fca9uvfl1_20260406T133000Z",
+    "title": "Prep GTM semanal",
+    "start": "2026-04-06T09:30:00-04:00",
+    "end": "2026-04-06T10:15:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260406T170000Z",
+    "title": "🍔 Almuerzo",
+    "start": "2026-04-06T13:00:00-04:00",
+    "end": "2026-04-06T14:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "42us3go94d3rc5g3f24qvm4okn_20260406T183000Z",
+    "title": "Toku <> UMag - Daily Integración",
+    "start": "2026-04-06T14:30:00-04:00",
+    "end": "2026-04-06T15:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "650udeo2c89e1pgsd2333b9iq7",
+    "title": "Kickoff Toku <> Bettersoft",
+    "start": "2026-04-06T15:00:00-04:00",
+    "end": "2026-04-06T16:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "7quvpbtemji8q8a1s3sse6nlv0_20260406T203000Z",
+    "title": "Semanal Gian - Juanito ",
+    "start": "2026-04-06T16:30:00-04:00",
+    "end": "2026-04-06T17:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "cf4t44chccaqgd3dq93i5pthkc_20260406T211500Z",
+    "title": "Salescamp Chile ",
+    "start": "2026-04-06T17:15:00-04:00",
+    "end": "2026-04-06T18:15:00-04:00",
+    "location": "Oficina Toku Chile-Piso 16-P16 - Sala D - Torres del Paine (VC) (10)"
+  },
+  {
+    "id": "3e7k9idj9lnkm2oobe0uoj2340",
+    "title": "Vuelo SCL - Punta Arenas",
+    "start": "2026-04-07T08:00:00-04:00",
+    "end": "2026-04-07T13:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "1nitvtt5pbqko9ibb14t0k08ub_20260407T140000Z",
+    "title": "TOKU | IPSS: Check-in Semanal",
+    "start": "2026-04-07T10:00:00-04:00",
+    "end": "2026-04-07T10:30:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "7harl67360vdiislqvtg41t20s_20260407T150000Z",
+    "title": "Semanal IPG - Toku ",
+    "start": "2026-04-07T11:00:00-04:00",
+    "end": "2026-04-07T11:30:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "c6m0seu0555jac0as6vcdksosb_20260407T153000Z",
+    "title": "Toku | CFT RM: Check-in Semanal",
+    "start": "2026-04-07T11:30:00-04:00",
+    "end": "2026-04-07T12:00:00-04:00",
+    "location": "Oficina Toku Chile-Piso 15-P15 - PB 1 - Cóndor (4)"
+  },
+  {
+    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260407T170000Z",
+    "title": "🍔 Almuerzo",
+    "start": "2026-04-07T13:00:00-04:00",
+    "end": "2026-04-07T14:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "42us3go94d3rc5g3f24qvm4okn_20260407T183000Z",
+    "title": "Toku <> UMag - Daily Integración",
+    "start": "2026-04-07T14:30:00-04:00",
+    "end": "2026-04-07T15:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "0h9vhcfdcofsd9mm8cm0kr6hn1_20260407T190000Z",
+    "title": "GTM CL C5 (Educación y Goods) ",
+    "start": "2026-04-07T15:00:00-04:00",
+    "end": "2026-04-07T16:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "6mee4prq19j89k134u7s0trie2",
+    "title": "UC - Boca",
+    "start": "2026-04-07T20:00:00-04:00",
+    "end": "2026-04-07T21:30:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "7r46qvijslsgp4tm9fbr4cgkjm_20260408T150000Z",
+    "title": "Seguimiento Toku <> Craighouse",
+    "start": "2026-04-08T11:00:00-04:00",
+    "end": "2026-04-08T12:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260408T170000Z",
+    "title": "🍔 Almuerzo",
+    "start": "2026-04-08T13:00:00-04:00",
+    "end": "2026-04-08T14:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "3ij9hsvpmn3egmi9e45qhh4h3k",
+    "title": "Vuelo Punta Arenas - SCL",
+    "start": "2026-04-08T14:00:00-04:00",
+    "end": "2026-04-08T18:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "42us3go94d3rc5g3f24qvm4okn_20260408T183000Z",
+    "title": "Toku <> UMag - Daily Integración",
+    "start": "2026-04-08T14:30:00-04:00",
+    "end": "2026-04-08T15:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "6ooj8eb475h30b9m64pjeb9kcopmcbb2c5j34b9icpj3idhj70o3adphc4_20260409T150000Z",
+    "title": "Check-in Semanal Greenhouse <> Toku",
+    "start": "2026-04-09T11:00:00-04:00",
+    "end": "2026-04-09T11:30:00-04:00",
+    "location": "https://meet.google.com/fco-agav-hzm, Oficina Toku Chile-Piso 15-P15 - Sala D - Valparaíso (4)"
+  },
+  {
+    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260409T170000Z",
+    "title": "🍔 Almuerzo",
+    "start": "2026-04-09T13:00:00-04:00",
+    "end": "2026-04-09T14:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "42us3go94d3rc5g3f24qvm4okn_20260409T183000Z",
+    "title": "Toku <> UMag - Daily Integración",
+    "start": "2026-04-09T14:30:00-04:00",
+    "end": "2026-04-09T15:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "6svqlqgup2blme44et3jd6vro2_20260410T131500Z",
+    "title": "Toku | UCSH: Checkin Semanal",
+    "start": "2026-04-10T09:15:00-04:00",
+    "end": "2026-04-10T10:15:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "4dl8qhgui0jgq1al8l0o01khje_20260410T163000Z",
+    "title": "[Interno] Completar Semanal",
+    "start": "2026-04-10T12:30:00-04:00",
+    "end": "2026-04-10T13:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "6p9e8kg6knq3ktot0ae0slmcqa_20260410T170000Z",
+    "title": "🍔 Almuerzo",
+    "start": "2026-04-10T13:00:00-04:00",
+    "end": "2026-04-10T14:00:00-04:00",
+    "location": ""
+  },
+  {
+    "id": "42us3go94d3rc5g3f24qvm4okn_20260410T183000Z",
+    "title": "Toku <> UMag - Daily Integración",
+    "start": "2026-04-10T14:30:00-04:00",
+    "end": "2026-04-10T15:00:00-04:00",
     "location": ""
   }
 ]
