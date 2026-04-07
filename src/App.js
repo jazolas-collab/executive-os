@@ -861,10 +861,136 @@ function ClientsView({clients,setClients,deals,onBack,meetingMeta={}}) {
               )}
             </Card>
 
+            {/* ── DIIO — Grabaciones de reuniones ── */}
+            <DiioSection clientName={client.name} />
+
           </div>
         )}
       </div>
     </div>
+  );
+}
+
+// ─── DIIO SECTION ────────────────────────────────────────────────────
+function DiioSection({clientName}) {
+  const [open,setOpen]=useState(false);
+  const [meetings,setMeetings]=useState(null);
+  const [loading,setLoading]=useState(false);
+  const [error,setError]=useState(null);
+  const [expanded,setExpanded]=useState(null);
+  const [detail,setDetail]=useState({});
+  const [loadingDetail,setLoadingDetail]=useState({});
+
+  const loadMeetings=async()=>{
+    setLoading(true); setError(null);
+    try{
+      const res=await fetch("/api/diio?action=meetings&limit=100");
+      if(!res.ok) throw new Error(`Error ${res.status}`);
+      const data=await res.json();
+      // Filter by client name (case-insensitive partial match on title/participants)
+      const all=Array.isArray(data)?data:(data.meetings||data.items||data.data||[]);
+      const filtered=all.filter(m=>{
+        const hay=(m.title||m.name||"").toLowerCase()+(m.participants||[]).map(p=>(p.name||p.email||"").toLowerCase()).join(" ");
+        return hay.includes(clientName.toLowerCase().split(" ")[0].toLowerCase());
+      });
+      setMeetings(filtered.length?filtered:all.slice(0,20)); // fallback: show all if no match
+    }catch(e){setError(e.message);}
+    setLoading(false);
+  };
+
+  const loadDetail=async(id)=>{
+    if(detail[id]) return setExpanded(expanded===id?null:id);
+    setLoadingDetail(l=>({...l,[id]:true}));
+    try{
+      const [sumRes,trRes]=await Promise.all([
+        fetch(`/api/diio?action=summary&id=${id}`),
+        fetch(`/api/diio?action=transcript&id=${id}`)
+      ]);
+      const sum=sumRes.ok?await sumRes.json():null;
+      const tr=trRes.ok?await trRes.json():null;
+      setDetail(d=>({...d,[id]:{summary:sum,transcript:tr}}));
+    }catch(e){console.warn("DIIO detail error",e);}
+    setLoadingDetail(l=>({...l,[id]:false}));
+    setExpanded(id);
+  };
+
+  const fmtMeetingDate=iso=>{
+    if(!iso) return "—";
+    try{return new Date(iso).toLocaleDateString("es-CL",{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});}
+    catch{return iso;}
+  };
+
+  return (
+    <Card>
+      <div onClick={()=>{setOpen(o=>!o);if(!open&&!meetings)loadMeetings();}} style={{display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer",marginBottom:open?12:0}}>
+        <SectionTitle style={{marginBottom:0}}>🎙 Grabaciones DIIO</SectionTitle>
+        <div style={{display:"flex",alignItems:"center",gap:8}}>
+          {meetings!==null&&<span style={{fontSize:10,color:C.textMuted}}>{meetings.length} reuniones</span>}
+          <span style={{fontSize:10,background:C.accentBg,color:C.accent,border:`1px solid ${C.accent}40`,borderRadius:10,padding:"1px 8px",fontWeight:700}}>IA</span>
+          <span style={{color:C.textMuted,fontSize:13}}>{open?"▲":"▼"}</span>
+        </div>
+      </div>
+      {open&&(
+        <div>
+          {loading&&<div style={{textAlign:"center",padding:"20px 0",color:C.accent,fontSize:13}}>⏳ Cargando reuniones de DIIO...</div>}
+          {error&&(
+            <div style={{background:C.dangerBg,border:`1px solid ${C.danger}30`,borderRadius:8,padding:"10px 14px",fontSize:12,color:C.danger}}>
+              {error.includes("404")||error.includes("ECONNREFUSED")
+                ?"⚙️ Conectando con DIIO... Verifica que las variables de entorno estén configuradas en Vercel."
+                :`Error: ${error}`}
+              <button onClick={loadMeetings} style={{marginLeft:10,background:"none",border:`1px solid ${C.danger}50`,color:C.danger,borderRadius:4,padding:"2px 8px",fontSize:11,cursor:"pointer",fontFamily:"inherit"}}>Reintentar</button>
+            </div>
+          )}
+          {!loading&&!error&&meetings&&meetings.length===0&&(
+            <div style={{textAlign:"center",padding:"16px 0",color:C.textMuted,fontSize:12}}>Sin grabaciones encontradas para {clientName}</div>
+          )}
+          {!loading&&meetings&&meetings.length>0&&(
+            <div style={{display:"flex",flexDirection:"column",gap:6}}>
+              {meetings.map(m=>{
+                const mid=m.id||m.meeting_id||m.uuid;
+                const isExp=expanded===mid;
+                const det=detail[mid];
+                const ldg=loadingDetail[mid];
+                return (
+                  <div key={mid} style={{background:C.bg,border:`1px solid ${isExp?C.accent+"50":C.border}`,borderRadius:8,overflow:"hidden",transition:"border .15s"}}>
+                    <div onClick={()=>loadDetail(mid)} style={{display:"flex",alignItems:"center",gap:10,padding:"10px 14px",cursor:"pointer"}}>
+                      <span style={{fontSize:16,flexShrink:0}}>🎙</span>
+                      <div style={{flex:1,minWidth:0}}>
+                        <div style={{fontSize:13,fontWeight:600,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{m.title||m.name||"Reunión sin título"}</div>
+                        <div style={{fontSize:10,color:C.textMuted,marginTop:2}}>{fmtMeetingDate(m.date||m.start_time||m.created_at)}{m.duration?" · "+Math.round(m.duration/60)+"min":""}</div>
+                      </div>
+                      {ldg?<span style={{fontSize:11,color:C.accent}}>⏳</span>:<span style={{fontSize:11,color:C.textMuted}}>{isExp?"▲":"▼"}</span>}
+                    </div>
+                    {isExp&&det&&(
+                      <div style={{borderTop:`1px solid ${C.border}`,padding:"12px 14px",display:"flex",flexDirection:"column",gap:10}}>
+                        {det.summary&&(
+                          <div>
+                            <div style={{fontSize:10,fontWeight:700,color:C.accentDim,textTransform:"uppercase",letterSpacing:.8,marginBottom:6}}>✦ Resumen IA</div>
+                            <div style={{fontSize:12,color:C.text,lineHeight:1.7,background:C.accentBg,border:`1px solid ${C.accent}20`,borderRadius:8,padding:"10px 12px",whiteSpace:"pre-wrap"}}>
+                              {typeof det.summary==="string"?det.summary:det.summary.summary||det.summary.text||JSON.stringify(det.summary,null,2)}
+                            </div>
+                          </div>
+                        )}
+                        {det.transcript&&(
+                          <details style={{cursor:"pointer"}}>
+                            <summary style={{fontSize:11,color:C.textMuted,fontWeight:600,letterSpacing:.5,userSelect:"none",listStyle:"none",display:"flex",alignItems:"center",gap:6}}>
+                              <span>📄 Ver transcripción completa</span>
+                            </summary>
+                            <div style={{marginTop:8,maxHeight:320,overflowY:"auto",fontSize:11,color:C.textDim,lineHeight:1.7,background:C.bg,borderRadius:6,padding:"8px 10px",whiteSpace:"pre-wrap"}}>
+                              {typeof det.transcript==="string"?det.transcript:JSON.stringify(det.transcript,null,2)}
+                            </div>
+                          </details>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      )}
+    </Card>
   );
 }
 
