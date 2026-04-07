@@ -443,13 +443,13 @@ function PipelineView({deals,setDeals,onBack}) {
         <div><div style={{fontSize:18,fontWeight:700,color:C.text}}>Pipeline</div><div style={{fontSize:12,color:C.textMuted}}>Juan Felipe Azolas · Solo lectura HubSpot</div></div>
         <div style={{marginLeft:"auto",fontSize:20,fontWeight:700,color:C.accent}}>{fmt(total)}</div>
       </div>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:12,marginBottom:24}}>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:10,marginBottom:24}}>
         {STAGES.map(s=>{
           const sd=byStage(s);
-          return <Card key={s}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}><span style={{fontSize:12,fontWeight:700,color:STAGE_COLOR[s],textTransform:"uppercase",letterSpacing:1}}>{s}</span><Badge color={STAGE_COLOR[s]}>{sd.length}</Badge></div><div style={{fontSize:22,fontWeight:700,color:C.text}}>{fmt(sd.reduce((a,d)=>a+d.value,0))}</div></Card>;
+          return <Card key={s} style={{padding:"12px 14px"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6}}><span style={{fontSize:10,fontWeight:700,color:STAGE_COLOR[s],textTransform:"uppercase",letterSpacing:.8,lineHeight:1.3}}>{s}</span><Badge color={STAGE_COLOR[s]}>{sd.length}</Badge></div><div style={{fontSize:18,fontWeight:700,color:C.text}}>{fmt(sd.reduce((a,d)=>a+d.value,0))}</div></Card>;
         })}
       </div>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16,alignItems:"start"}}>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:12,alignItems:"start"}}>
         {STAGES.map(stage=>{
           const stageDeals=byStage(stage);
           const isDropTarget=overStage===stage;
@@ -475,26 +475,26 @@ function PipelineView({deals,setDeals,onBack}) {
                     <div key={deal.id} draggable onDragStart={e=>handleDragStart(e,deal.id)} onDragEnd={handleDragEnd}
                       onDragOver={e=>{e.preventDefault();e.stopPropagation();handleDragOverStage(e,stage,idx);}}
                       onDrop={e=>{e.stopPropagation();handleDropOnStage(e,stage,idx);}}
-                      style={{background:isOverThis?C.accentBg:C.surface,border:`1px solid ${isOverThis?C.accent+"60":C.border}`,borderTop:`3px solid ${STAGE_COLOR[deal.stage]}`,borderRadius:10,padding:"14px 14px 12px",cursor:"grab",opacity:isDraggingThis?.3:1,transition:"all .15s",userSelect:"none"}}>
+                      style={{background:isOverThis?C.accentBg:C.surface,border:`1px solid ${isOverThis?C.accent+"60":C.border}`,borderTop:`3px solid ${STAGE_COLOR[deal.stage]}`,borderRadius:10,padding:"10px 10px 9px",cursor:"grab",opacity:isDraggingThis?.3:1,transition:"all .15s",userSelect:"none"}}>
                       {/* Client name + deal name */}
-                      <div style={{marginBottom:6}}>
-                        <div style={{fontSize:11,fontWeight:700,color:STAGE_COLOR[deal.stage],textTransform:"uppercase",letterSpacing:.5,marginBottom:2}}>{deal.clientName}</div>
-                        <div style={{fontSize:13,fontWeight:600,color:C.text,lineHeight:1.4}}>{deal.name}</div>
+                      <div style={{marginBottom:5}}>
+                        <div style={{fontSize:10,fontWeight:700,color:STAGE_COLOR[deal.stage],textTransform:"uppercase",letterSpacing:.5,marginBottom:1}}>{deal.clientName}</div>
+                        <div style={{fontSize:12,fontWeight:600,color:C.text,lineHeight:1.3}}>{deal.name}</div>
                       </div>
-                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
-                        <span style={{fontSize:11,color:C.textMuted,textTransform:"uppercase",letterSpacing:.5}}>Valor</span>
-                        <span style={{fontSize:16,fontWeight:700,color:deal.value>0?C.accent:C.textMuted}}>{fmt(deal.value)}</span>
+                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:5}}>
+                        <span style={{fontSize:10,color:C.textMuted,textTransform:"uppercase",letterSpacing:.5}}>Valor</span>
+                        <span style={{fontSize:14,fontWeight:700,color:deal.value>0?C.accent:C.textMuted}}>{fmt(deal.value)}</span>
                       </div>
-                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6}}>
-                        <span style={{fontSize:11,color:C.textMuted,textTransform:"uppercase",letterSpacing:.5}}>Cierre</span>
-                        <div style={{display:"flex",alignItems:"center",gap:6}}>
-                          <span style={{fontSize:12,color:urg?.color||C.textDim,fontWeight:urg?.label?700:400}}>{fmtDate(deal.closedate)}</span>
+                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}>
+                        <span style={{fontSize:10,color:C.textMuted,textTransform:"uppercase",letterSpacing:.5}}>Cierre</span>
+                        <div style={{display:"flex",alignItems:"center",gap:4,flexWrap:"wrap",justifyContent:"flex-end"}}>
+                          <span style={{fontSize:11,color:urg?.color||C.textDim,fontWeight:urg?.label?700:400}}>{fmtDate(deal.closedate)}</span>
                           {urg?.label&&<Badge color={urg.color}>{urg.label}</Badge>}
                         </div>
                       </div>
-                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:10,paddingTop:10,borderTop:`1px solid ${C.border}`}}>
+                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:8,paddingTop:8,borderTop:`1px solid ${C.border}`}}>
                         <span style={{fontSize:10,color:C.textMuted}}>#{deal.id.slice(-6)}</span>
-                        <a href={"https://app.hubspot.com/contacts/7423287/record/0-3/"+deal.id} target="_blank" rel="noopener noreferrer" onClick={e=>e.stopPropagation()} style={{fontSize:10,color:C.accentDim,textDecoration:"none",fontWeight:600,padding:"2px 8px",border:`1px solid ${C.accentDim}40`,borderRadius:4}}>Ver en HS ↗</a>
+                        <a href={"https://app.hubspot.com/contacts/7423287/record/0-3/"+deal.id} target="_blank" rel="noopener noreferrer" onClick={e=>e.stopPropagation()} style={{fontSize:10,color:C.accentDim,textDecoration:"none",fontWeight:600,padding:"2px 6px",border:`1px solid ${C.accentDim}40`,borderRadius:4}}>HS ↗</a>
                       </div>
                     </div>
                   );
@@ -538,13 +538,18 @@ function guessEmoji(t){
 }
 
 // ─── CLIENTS VIEW ────────────────────────────────────────────────────
-function ClientsView({clients,setClients,deals,onBack}) {
+function ClientsView({clients,setClients,deals,onBack,meetingMeta={}}) {
   const [active,setActive]=useState(clients[0]?.id);
   const [showAdd,setShowAdd]=useState(false);
   const [showAddClient,setShowAddClient]=useState(false);
   const [search,setSearch]=useState("");
   const [newTodo,setNewTodo]=useState({text:"",emoji:"📋",priority:"Alta",date:"",notes:""});
   const [newClient,setNewClient]=useState({name:"",contact:""});
+  const [openSections,setOpenSections]=useState({summary:true,bizcase:false,contacts:true,history:false,meetings:false});
+  const [newInteraction,setNewInteraction]=useState({type:"reunion",notes:""});
+  const [showAddInteraction,setShowAddInteraction]=useState(false);
+  const [newStakeholder,setNewStakeholder]=useState({name:"",role:"",influence:"Media",attitude:"Neutral"});
+  const [showAddStakeholder,setShowAddStakeholder]=useState(false);
 
   const client=clients.find(c=>c.id===active);
   const deal=deals.find(d=>d.id===client?.dealId);
@@ -554,9 +559,17 @@ function ClientsView({clients,setClients,deals,onBack}) {
   const removeTodo  =(cid,tid)       =>setClients(cs=>cs.map(c=>c.id===cid?{...c,todos:c.todos.filter(t=>t.id!==tid)}:c));
   const reorderTodos=(cid,from,to)   =>setClients(cs=>cs.map(c=>{if(c.id!==cid)return c;const a=[...c.todos];const[i]=a.splice(from,1);a.splice(to,0,i);return{...c,todos:a};}));
   const updateContact=(cid,val)      =>setClients(cs=>cs.map(c=>c.id===cid?{...c,contact:val}:c));
+  const updateClientField=(cid,patch)=>setClients(cs=>cs.map(c=>c.id===cid?{...c,...patch}:c));
+  const toggleSection=(k)=>setOpenSections(s=>({...s,[k]:!s[k]}));
 
   const addTodo=()=>{ if(!newTodo.text)return; setClients(cs=>cs.map(c=>c.id===active?{...c,todos:[...c.todos,{id:Date.now(),...newTodo,source:"manual",done:false,gcal_event_id:null}]}:c)); setNewTodo({text:"",emoji:"📋",priority:"Alta",date:"",notes:""}); setShowAdd(false); };
-  const addClient=()=>{ if(!newClient.name)return; const nc={id:"custom-"+Date.now(),name:newClient.name,dealName:"",contact:newClient.contact,dealId:null,dealStage:null,dealValue:0,todos:[]}; setClients(cs=>[...cs,nc]); setActive(nc.id); setNewClient({name:"",contact:""}); setShowAddClient(false); };
+  const addClient=()=>{ if(!newClient.name)return; const nc={id:"custom-"+Date.now(),name:newClient.name,dealName:"",contact:newClient.contact,dealId:null,dealStage:null,dealValue:0,todos:[],projectSummary:"",businessCase:{stakeholders:[],painArea:""},interactions:[]}; setClients(cs=>[...cs,nc]); setActive(nc.id); setNewClient({name:"",contact:""}); setShowAddClient(false); };
+
+  const addInteraction=()=>{ if(!newInteraction.notes)return; const entry={id:Date.now(),date:todayStr(),...newInteraction}; updateClientField(active,{interactions:[entry,...(client.interactions||[])]}); setNewInteraction({type:"reunion",notes:""}); setShowAddInteraction(false); };
+  const removeInteraction=(id)=>updateClientField(active,{interactions:(client.interactions||[]).filter(i=>i.id!==id)});
+  const addStakeholder=()=>{ if(!newStakeholder.name)return; const s={id:Date.now(),...newStakeholder}; const bc=client.businessCase||{stakeholders:[],painArea:""}; updateClientField(active,{businessCase:{...bc,stakeholders:[...bc.stakeholders,s]}}); setNewStakeholder({name:"",role:"",influence:"Media",attitude:"Neutral"}); setShowAddStakeholder(false); };
+  const removeStakeholder=(id)=>{ const bc=client.businessCase||{stakeholders:[],painArea:""}; updateClientField(active,{businessCase:{...bc,stakeholders:bc.stakeholders.filter(s=>s.id!==id)}}); };
+  const updatePainArea=(val)=>{ const bc=client.businessCase||{stakeholders:[],painArea:""}; updateClientField(active,{businessCase:{...bc,painArea:val}}); };
 
   const filtered=clients.filter(c=>c.name.toLowerCase().includes(search.toLowerCase()));
   const sorted=[...client?.todos||[]].sort((a,b)=>{if(a.done!==b.done)return a.done?1:-1;const p=PRIORITY_ORDER[a.priority]-PRIORITY_ORDER[b.priority];return p!==0?p:(a.date||"9")<(b.date||"9")?-1:1;});
@@ -611,6 +624,8 @@ function ClientsView({clients,setClients,deals,onBack}) {
 
         {client&&(
           <div style={{display:"flex",flexDirection:"column",gap:12}}>
+
+            {/* ── Header card ── */}
             <Card style={{padding:"16px 20px"}}>
               <div style={{display:"flex",alignItems:"flex-start",justifyContent:"space-between",gap:16}}>
                 <div style={{flex:1}}>
@@ -634,6 +649,86 @@ function ClientsView({clients,setClients,deals,onBack}) {
               </div>
             </Card>
 
+            {/* ── Resumen del proyecto ── */}
+            <Card>
+              <div onClick={()=>toggleSection("summary")} style={{display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer",marginBottom:openSections.summary?12:0}}>
+                <SectionTitle style={{marginBottom:0}}>📋 Resumen del Proyecto</SectionTitle>
+                <span style={{color:C.textMuted,fontSize:13}}>{openSections.summary?"▲":"▼"}</span>
+              </div>
+              {openSections.summary&&(
+                <textarea value={client.projectSummary||""} onChange={e=>updateClientField(client.id,{projectSummary:e.target.value})}
+                  placeholder="Estado actual del proyecto, contexto clave, historia con el cliente, próximos hitos..."
+                  rows={4} style={{width:"100%",background:C.bg,border:`1px solid ${C.border}`,borderRadius:8,padding:"10px 12px",color:C.text,fontSize:13,fontFamily:"inherit",resize:"vertical",outline:"none",lineHeight:1.6,boxSizing:"border-box"}} />
+              )}
+            </Card>
+
+            {/* ── Business Case ── */}
+            <Card>
+              <div onClick={()=>toggleSection("bizcase")} style={{display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer",marginBottom:openSections.bizcase?14:0}}>
+                <SectionTitle style={{marginBottom:0}}>💼 Business Case</SectionTitle>
+                <span style={{color:C.textMuted,fontSize:13}}>{openSections.bizcase?"▲":"▼"}</span>
+              </div>
+              {openSections.bizcase&&(
+                <div style={{display:"flex",flexDirection:"column",gap:14}}>
+                  {/* Pain area */}
+                  <div>
+                    <div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:.8,marginBottom:8}}>Dolor Principal</div>
+                    <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
+                      {["Finanzas","Operaciones","TI","Académico","Admisión","Otro"].map(area=>{
+                        const active=(client.businessCase?.painArea||"")=== area;
+                        const areaColor={Finanzas:C.warn,Operaciones:C.blue,TI:C.purple,Académico:C.success,Admisión:C.accent,Otro:C.textMuted}[area]||C.textMuted;
+                        return <button key={area} onClick={()=>updatePainArea(active?"":area)} style={{background:active?areaColor+"25":"transparent",border:`1px solid ${active?areaColor:C.border}`,color:active?areaColor:C.textMuted,borderRadius:20,padding:"5px 14px",fontSize:12,fontWeight:active?700:400,cursor:"pointer",fontFamily:"inherit",transition:"all .15s"}}>{area}</button>;
+                      })}
+                    </div>
+                  </div>
+                  {/* Stakeholder map */}
+                  <div>
+                    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
+                      <div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:.8}}>Mapa de Stakeholders</div>
+                      <button onClick={()=>setShowAddStakeholder(!showAddStakeholder)} style={{background:"none",border:`1px solid ${C.border}`,color:C.accent,borderRadius:6,padding:"3px 10px",fontSize:11,cursor:"pointer",fontFamily:"inherit",fontWeight:600}}>+ Agregar</button>
+                    </div>
+                    {showAddStakeholder&&(
+                      <div style={{background:C.bg,border:`1px solid ${C.border}`,borderRadius:8,padding:12,marginBottom:10,display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr",gap:8}}>
+                        <input placeholder="Nombre" value={newStakeholder.name} onChange={e=>setNewStakeholder(f=>({...f,name:e.target.value}))} style={iStyle} />
+                        <input placeholder="Cargo / Rol" value={newStakeholder.role} onChange={e=>setNewStakeholder(f=>({...f,role:e.target.value}))} style={iStyle} />
+                        <select value={newStakeholder.influence} onChange={e=>setNewStakeholder(f=>({...f,influence:e.target.value}))} style={iStyle}>
+                          {["Alta","Media","Baja"].map(v=><option key={v}>{v}</option>)}
+                        </select>
+                        <select value={newStakeholder.attitude} onChange={e=>setNewStakeholder(f=>({...f,attitude:e.target.value}))} style={iStyle}>
+                          {["Champion","Favorable","Neutral","Resistente","Bloqueador"].map(v=><option key={v}>{v}</option>)}
+                        </select>
+                        <div style={{gridColumn:"1/-1",display:"flex",gap:8}}>
+                          <Btn onClick={addStakeholder} variant="accent">Agregar</Btn>
+                          <Btn onClick={()=>setShowAddStakeholder(false)}>Cancelar</Btn>
+                        </div>
+                      </div>
+                    )}
+                    {(client.businessCase?.stakeholders||[]).length===0
+                      ?<div style={{fontSize:12,color:C.textMuted,padding:"10px 0",textAlign:"center"}}>Sin stakeholders registrados</div>
+                      :<div style={{display:"flex",flexDirection:"column",gap:6}}>
+                        {(client.businessCase?.stakeholders||[]).map(s=>{
+                          const attColor={Champion:C.success,Favorable:C.blue,Neutral:C.textMuted,Resistente:C.warn,Bloqueador:C.danger}[s.attitude]||C.textMuted;
+                          const infColor={Alta:C.danger,Media:C.warn,Baja:C.textMuted}[s.influence]||C.textMuted;
+                          return (
+                            <div key={s.id} style={{display:"flex",alignItems:"center",gap:10,padding:"8px 10px",background:C.bg,borderRadius:8,border:`1px solid ${C.border}`}}>
+                              <div style={{flex:1,minWidth:0}}>
+                                <div style={{fontSize:13,fontWeight:700,color:C.text}}>{s.name}</div>
+                                {s.role&&<div style={{fontSize:11,color:C.textMuted}}>{s.role}</div>}
+                              </div>
+                              <Badge color={infColor} bg={infColor+"18"}>inf. {s.influence}</Badge>
+                              <Badge color={attColor} bg={attColor+"18"}>{s.attitude}</Badge>
+                              <button onClick={()=>removeStakeholder(s.id)} style={{background:"none",border:"none",color:C.textMuted,cursor:"pointer",fontSize:14,padding:"2px 4px",lineHeight:1}}>×</button>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    }
+                  </div>
+                </div>
+              )}
+            </Card>
+
+            {/* ── Tareas ── */}
             <Card>
               <SectionTitle action={<Btn onClick={()=>setShowAdd(!showAdd)} variant="accent">+ Tarea</Btn>}>
                 Tareas · {sorted.filter(t=>!t.done).length} pendientes
@@ -655,26 +750,117 @@ function ClientsView({clients,setClients,deals,onBack}) {
               <DraggableTodoList todos={sorted} clientId={client.id} onToggle={toggleDone} onUpdate={updateTodo} onRemove={removeTodo} onReorder={reorderTodos} showClient={false} />
             </Card>
 
-            {client.contacts&&client.contacts.length>0&&(
+            {/* ── Hub de Contactos ── */}
+            {(client.contacts&&client.contacts.length>0)&&(
               <Card>
-                <SectionTitle>👤 Contactos HubSpot</SectionTitle>
-                <div style={{overflowX:"auto"}}>
-                  <div style={{display:"grid",gridTemplateColumns:"1.2fr 1.6fr 1.8fr 1.2fr 56px",gap:8,padding:"4px 8px 8px",borderBottom:`1px solid ${C.border}`,minWidth:560}}>
-                    {["Nombre","Cargo","Email","Teléfono","N"].map(h=><div key={h} style={{fontSize:10,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:.5}}>{h}</div>)}
+                <div onClick={()=>toggleSection("contacts")} style={{display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer",marginBottom:openSections.contacts?12:0}}>
+                  <SectionTitle style={{marginBottom:0}}>👥 Hub de Contactos</SectionTitle>
+                  <div style={{display:"flex",alignItems:"center",gap:8}}>
+                    {client.id_organization&&<a href={`https://app.hubspot.com/contacts/7423287/record/0-2/${client.hubspot_company_id}`} target="_blank" rel="noopener noreferrer" onClick={e=>e.stopPropagation()} style={{fontSize:10,color:C.accentDim,textDecoration:"none",border:`1px solid ${C.accentDim}40`,borderRadius:4,padding:"2px 8px",fontWeight:600}}>HS empresa ↗</a>}
+                    <span style={{color:C.textMuted,fontSize:13}}>{openSections.contacts?"▲":"▼"}</span>
                   </div>
-                  {[...client.contacts].sort((a,b)=>{const o={N:0,"N-1":1,"N-2":2,"N-3":3,"N-4":4};return (o[a.nivel_cargo]??5)-(o[b.nivel_cargo]??5);}).map(ct=>(
-                    <div key={ct.id} style={{display:"grid",gridTemplateColumns:"1.2fr 1.6fr 1.8fr 1.2fr 56px",gap:8,padding:"7px 8px",borderRadius:6,alignItems:"center",minWidth:560,transition:"background .1s"}} onMouseEnter={e=>e.currentTarget.style.background=C.surfaceHover} onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
-                      <div style={{fontSize:12,fontWeight:600,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{ct.nombre}</div>
-                      <div style={{fontSize:11,color:C.textDim,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{ct.cargo}</div>
-                      <div style={{fontSize:11,overflow:"hidden",textOverflow:"ellipsis"}}><a href={`mailto:${ct.email}`} style={{color:C.accentDim,textDecoration:"none"}}>{ct.email}</a></div>
-                      <div style={{fontSize:11,color:C.textMuted,whiteSpace:"nowrap"}}>{ct.telefono||"—"}</div>
-                      <div style={{fontSize:11,fontWeight:700,textAlign:"center",color:ct.nivel_cargo==="N"?C.warn:ct.nivel_cargo?.includes("-1")?C.accent:ct.nivel_cargo?.includes("-2")?C.blue:C.textDim}}>{ct.nivel_cargo||"—"}</div>
-                    </div>
-                  ))}
                 </div>
-                {client.id_organization&&<div style={{marginTop:10,paddingTop:10,borderTop:`1px solid ${C.border}`,display:"flex",gap:8,alignItems:"center"}}><span style={{fontSize:10,color:C.textMuted}}>ID Organización: <span style={{color:C.accent,fontWeight:700}}>{client.id_organization}</span></span><a href={`https://app.hubspot.com/contacts/7423287/record/0-2/${client.hubspot_company_id}`} target="_blank" rel="noopener noreferrer" style={{fontSize:10,color:C.accentDim,textDecoration:"none",border:`1px solid ${C.accentDim}40`,borderRadius:4,padding:"2px 8px",fontWeight:600}}>Ver empresa ↗</a></div>}
+                {openSections.contacts&&(
+                  <div style={{overflowX:"auto"}}>
+                    <div style={{display:"grid",gridTemplateColumns:"1.4fr 1.6fr 1.8fr 1fr 80px 44px",gap:6,padding:"4px 8px 8px",borderBottom:`1px solid ${C.border}`,minWidth:620}}>
+                      {["Nombre","Cargo","Email","Teléfono","N","WA"].map(h=><div key={h} style={{fontSize:10,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:.5}}>{h}</div>)}
+                    </div>
+                    {[...client.contacts].sort((a,b)=>{const o={N:0,"N-1":1,"N-2":2,"N-3":3,"N-4":4};return (o[a.nivel_cargo]??5)-(o[b.nivel_cargo]??5);}).map(ct=>{
+                      const phone=(ct.telefono||"").replace(/\s+/g,"").replace(/^\+56/,"+56").replace(/[^+\d]/g,"");
+                      const waLink=phone?`https://wa.me/${phone.replace("+","")}`:null;
+                      return (
+                        <div key={ct.id} style={{display:"grid",gridTemplateColumns:"1.4fr 1.6fr 1.8fr 1fr 80px 44px",gap:6,padding:"7px 8px",borderRadius:6,alignItems:"center",minWidth:620,transition:"background .1s"}} onMouseEnter={e=>e.currentTarget.style.background=C.surfaceHover} onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
+                          <div style={{fontSize:12,fontWeight:600,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{ct.nombre}</div>
+                          <div style={{fontSize:11,color:C.textDim,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{ct.cargo}</div>
+                          <div style={{fontSize:11,overflow:"hidden",textOverflow:"ellipsis"}}><a href={`mailto:${ct.email}`} style={{color:C.accentDim,textDecoration:"none"}}>{ct.email}</a></div>
+                          <div style={{fontSize:11,color:C.textMuted,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{ct.telefono||"—"}</div>
+                          <div style={{fontSize:11,fontWeight:700,textAlign:"center",color:ct.nivel_cargo==="N"?C.warn:ct.nivel_cargo?.includes("-1")?C.accent:ct.nivel_cargo?.includes("-2")?C.blue:C.textDim}}>{ct.nivel_cargo||"—"}</div>
+                          <div style={{textAlign:"center"}}>
+                            {waLink
+                              ?<a href={waLink} target="_blank" rel="noopener noreferrer" title={`WhatsApp: ${ct.telefono}`} style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:28,height:28,background:"#25D36618",border:"1px solid #25D36640",borderRadius:6,textDecoration:"none",fontSize:14}}>💬</a>
+                              :<span style={{fontSize:12,color:C.border}}>—</span>}
+                          </div>
+                        </div>
+                      );
+                    })}
+                    {client.id_organization&&<div style={{marginTop:8,paddingTop:8,borderTop:`1px solid ${C.border}`,fontSize:10,color:C.textMuted}}>ID Organización: <span style={{color:C.accent,fontWeight:700}}>{client.id_organization}</span></div>}
+                  </div>
+                )}
               </Card>
             )}
+
+            {/* ── Reuniones del calendario ── */}
+            {(()=>{const clientMeetings=CALENDAR_EVENTS.filter(m=>meetingMeta[m.id]?.clientId===client.id);return clientMeetings.length>0&&(
+              <Card>
+                <div onClick={()=>toggleSection("meetings")} style={{display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer",marginBottom:openSections.meetings?12:0}}>
+                  <SectionTitle style={{marginBottom:0}}>📅 Reuniones ({clientMeetings.length})</SectionTitle>
+                  <span style={{color:C.textMuted,fontSize:13}}>{openSections.meetings?"▲":"▼"}</span>
+                </div>
+                {openSections.meetings&&(
+                  <div style={{display:"flex",flexDirection:"column",gap:8}}>
+                    {[...clientMeetings].sort((a,b)=>new Date(b.start)-new Date(a.start)).map(m=>{
+                      const meta=meetingMeta[m.id]||{};
+                      return (
+                        <div key={m.id} style={{background:C.bg,border:`1px solid ${C.border}`,borderRadius:8,padding:"10px 14px"}}>
+                          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:meta.notes?6:0}}>
+                            <div>
+                              <div style={{fontSize:13,fontWeight:600,color:C.text}}>{m.title}</div>
+                              <div style={{fontSize:11,color:C.accentDim,marginTop:2}}>{fmtDate(meetingDateStr(m.start))} · {fmtTime(m.start)} – {fmtTime(m.end)}</div>
+                            </div>
+                          </div>
+                          {meta.notes&&<div style={{fontSize:12,color:C.textDim,marginTop:6,padding:"8px 10px",background:C.surface,borderRadius:6,lineHeight:1.6,whiteSpace:"pre-wrap"}}>{meta.notes}</div>}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </Card>
+            );})()}
+
+            {/* ── Historial de Interacciones ── */}
+            <Card>
+              <div onClick={()=>toggleSection("history")} style={{display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer",marginBottom:openSections.history?12:0}}>
+                <SectionTitle style={{marginBottom:0}}>🗂 Historial de Interacciones</SectionTitle>
+                <div style={{display:"flex",alignItems:"center",gap:8}}>
+                  <button onClick={e=>{e.stopPropagation();setShowAddInteraction(!showAddInteraction);if(!openSections.history)toggleSection("history");}} style={{background:"none",border:`1px solid ${C.border}`,color:C.accent,borderRadius:6,padding:"3px 10px",fontSize:11,cursor:"pointer",fontFamily:"inherit",fontWeight:600}}>+ Registrar</button>
+                  <span style={{color:C.textMuted,fontSize:13}}>{openSections.history?"▲":"▼"}</span>
+                </div>
+              </div>
+              {openSections.history&&(
+                <div>
+                  {showAddInteraction&&(
+                    <div style={{background:C.bg,border:`1px solid ${C.border}`,borderRadius:8,padding:12,marginBottom:12,display:"flex",flexDirection:"column",gap:8}}>
+                      <div style={{display:"flex",gap:8}}>
+                        <select value={newInteraction.type} onChange={e=>setNewInteraction(f=>({...f,type:e.target.value}))} style={{...iStyle,flex:"0 0 auto",minWidth:140}}>
+                          {[["reunion","🤝 Reunión"],["llamada","📞 Llamada"],["email","✉ Email"],["whatsapp","💬 WhatsApp"],["demo","🚀 Demo"],["otro","📌 Otro"]].map(([v,l])=><option key={v} value={v}>{l}</option>)}
+                        </select>
+                        <textarea value={newInteraction.notes} onChange={e=>setNewInteraction(f=>({...f,notes:e.target.value}))} placeholder="¿Qué pasó? ¿Qué se acordó? ¿Compromisos?" rows={2} style={{...iStyle,flex:1,resize:"vertical",lineHeight:1.5}} />
+                      </div>
+                      <div style={{display:"flex",gap:8}}><Btn onClick={addInteraction} variant="accent">Guardar</Btn><Btn onClick={()=>setShowAddInteraction(false)}>Cancelar</Btn></div>
+                    </div>
+                  )}
+                  {(client.interactions||[]).length===0
+                    ?<div style={{fontSize:12,color:C.textMuted,textAlign:"center",padding:"16px 0"}}>Sin interacciones registradas</div>
+                    :<div style={{display:"flex",flexDirection:"column",gap:6}}>
+                      {(client.interactions||[]).map(inter=>{
+                        const typeIcon={reunion:"🤝",llamada:"📞",email:"✉️",whatsapp:"💬",demo:"🚀",otro:"📌"}[inter.type]||"📌";
+                        return (
+                          <div key={inter.id} style={{display:"flex",gap:10,padding:"9px 12px",background:C.bg,borderRadius:8,border:`1px solid ${C.border}`,alignItems:"flex-start"}}>
+                            <span style={{fontSize:16,flexShrink:0,marginTop:1}}>{typeIcon}</span>
+                            <div style={{flex:1,minWidth:0}}>
+                              <div style={{fontSize:12,color:C.text,lineHeight:1.5,whiteSpace:"pre-wrap"}}>{inter.notes}</div>
+                              <div style={{fontSize:10,color:C.textMuted,marginTop:3}}>{fmtDate(inter.date)}</div>
+                            </div>
+                            <button onClick={()=>removeInteraction(inter.id)} style={{background:"none",border:"none",color:C.textMuted,cursor:"pointer",fontSize:14,flexShrink:0,padding:"2px 4px"}}>×</button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  }
+                </div>
+              )}
+            </Card>
+
           </div>
         )}
       </div>
@@ -685,8 +871,9 @@ function ClientsView({clients,setClients,deals,onBack}) {
 // ─── CALENDAR STRIP ──────────────────────────────────────────────────
 const HOUR_COLORS=[C.accent,C.blue,C.success,C.warn,C.purple,C.danger];
 function addDays(dateStr,n){const d=new Date(dateStr+"T12:00:00");d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;}
-function CalendarStrip() {
+function CalendarStrip({clients=[],meetingMeta={},setMeetingMeta}) {
   const [calDay,setCalDay]=useState(getCalendarDay());
+  const [expandedId,setExpandedId]=useState(null);
   const isCurrentDay=calDay===todayStr();
   const isTomorrow=calDay===addDays(todayStr(),1);
   const navLabel=isCurrentDay?"Hoy":isTomorrow?"Mañana":formatDayLabel(calDay).split(",")[0];
@@ -695,7 +882,10 @@ function CalendarStrip() {
   const minH=allH.length?Math.min(...allH)-.5:8;
   const maxH=allH.length?Math.max(...allH)+1:18;
   const totalH=maxH-minH;
-  const pxH=54;
+  const pxH=64;
+
+  const updateMeta=(id,patch)=>setMeetingMeta(prev=>({...prev,[id]:{...(prev[id]||{}), ...patch}}));
+
   return (
     <Card style={{marginTop:24}}>
       <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}>
@@ -711,10 +901,61 @@ function CalendarStrip() {
       </div>
       {dayMeetings.length===0
         ?<div style={{textAlign:"center",padding:"24px 0",color:C.textMuted,fontSize:13}}>Sin reuniones {navLabel.toLowerCase()} 🎉</div>
-        :<div style={{position:"relative",height:totalH*pxH+24,marginTop:8}}>
-          {Array.from({length:Math.ceil(totalH)+1},(_,i)=>{const h=Math.floor(minH)+i;if(h<0||h>23)return null;return <div key={h} style={{position:"absolute",top:(h-minH)*pxH,left:0,right:0,display:"flex",alignItems:"center",gap:8,opacity:.4}}><span style={{fontSize:10,color:C.textMuted,minWidth:36,textAlign:"right"}}>{String(h).padStart(2,"0")}:00</span><div style={{flex:1,height:1,background:C.border}} /></div>;})}
-          {isCurrentDay&&!isWorkdayOver()&&(()=>{const now=getNowCL();const nowH=now.getHours()+(now.getMinutes()/60);if(nowH>=minH&&nowH<=maxH)return <div style={{position:"absolute",left:44,right:0,top:(nowH-minH)*pxH,display:"flex",alignItems:"center",gap:4,zIndex:10}}><div style={{width:8,height:8,borderRadius:"50%",background:C.danger,flexShrink:0}} /><div style={{flex:1,height:2,background:C.danger,opacity:.7}} /></div>;return null;})()}
-          {dayMeetings.map((m,i)=>{const sH=meetingHour(m.start);const eH=meetingHour(m.end);const top=(sH-minH)*pxH;const height=Math.max((eH-sH)*pxH-4,24);const color=HOUR_COLORS[i%HOUR_COLORS.length];return <div key={m.id} style={{position:"absolute",left:52,right:0,top,height,background:color+"22",border:`1px solid ${color}50`,borderLeft:`3px solid ${color}`,borderRadius:8,padding:"4px 10px",overflow:"hidden"}}><div style={{fontSize:12,fontWeight:600,color:C.text,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{m.title}</div><div style={{fontSize:10,color,marginTop:1}}>{fmtTime(m.start)} – {fmtTime(m.end)}{m.location&&!m.location.startsWith("http")?" · "+m.location:""}</div></div>;})}
+        :<div style={{display:"flex",flexDirection:"column",gap:0}}>
+          {/* Timeline ruler */}
+          <div style={{position:"relative",height:totalH*pxH+24,marginTop:8}}>
+            {Array.from({length:Math.ceil(totalH)+1},(_,i)=>{const h=Math.floor(minH)+i;if(h<0||h>23)return null;return <div key={h} style={{position:"absolute",top:(h-minH)*pxH,left:0,right:0,display:"flex",alignItems:"center",gap:8,opacity:.4}}><span style={{fontSize:10,color:C.textMuted,minWidth:36,textAlign:"right"}}>{String(h).padStart(2,"0")}:00</span><div style={{flex:1,height:1,background:C.border}} /></div>;})}
+            {isCurrentDay&&!isWorkdayOver()&&(()=>{const now=getNowCL();const nowH=now.getHours()+(now.getMinutes()/60);if(nowH>=minH&&nowH<=maxH)return <div style={{position:"absolute",left:44,right:0,top:(nowH-minH)*pxH,display:"flex",alignItems:"center",gap:4,zIndex:10}}><div style={{width:8,height:8,borderRadius:"50%",background:C.danger,flexShrink:0}} /><div style={{flex:1,height:2,background:C.danger,opacity:.7}} /></div>;return null;})()}
+            {dayMeetings.map((m,i)=>{
+              const sH=meetingHour(m.start);const eH=meetingHour(m.end);
+              const top=(sH-minH)*pxH;const height=Math.max((eH-sH)*pxH-4,28);
+              const color=HOUR_COLORS[i%HOUR_COLORS.length];
+              const meta=meetingMeta[m.id]||{};
+              const linkedClient=clients.find(c=>c.id===meta.clientId);
+              const isExpanded=expandedId===m.id;
+              return (
+                <div key={m.id} style={{position:"absolute",left:52,right:0,top,zIndex:isExpanded?20:5}}>
+                  {/* Meeting block */}
+                  <div onClick={()=>setExpandedId(isExpanded?null:m.id)}
+                    style={{height,background:isExpanded?color+"33":color+"22",border:`1px solid ${isExpanded?color+"90":color+"50"}`,borderLeft:`3px solid ${color}`,borderRadius:isExpanded?"8px 8px 0 0":8,padding:"4px 10px",overflow:"hidden",cursor:"pointer",transition:"all .15s",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                    <div style={{minWidth:0}}>
+                      <div style={{fontSize:12,fontWeight:600,color:C.text,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{m.title}</div>
+                      <div style={{fontSize:10,color,marginTop:1,display:"flex",alignItems:"center",gap:6}}>
+                        {fmtTime(m.start)} – {fmtTime(m.end)}{m.location&&!m.location.startsWith("http")?" · "+m.location:""}
+                        {linkedClient&&<span style={{background:color+"25",border:`1px solid ${color+"50"}`,borderRadius:8,padding:"1px 6px",color:color,fontWeight:700}}>👤 {linkedClient.name}</span>}
+                        {meta.notes&&<span style={{color:C.textMuted}}>📝</span>}
+                      </div>
+                    </div>
+                    <span style={{fontSize:10,color:isExpanded?color:C.textMuted,flexShrink:0,marginLeft:8}}>{isExpanded?"▲":"▼"}</span>
+                  </div>
+                  {/* Expanded panel */}
+                  {isExpanded&&(
+                    <div style={{background:C.surface,border:`1px solid ${color+"50"}`,borderTop:"none",borderRadius:"0 0 8px 8px",padding:"12px 14px",display:"flex",flexDirection:"column",gap:10}}>
+                      <div style={{display:"flex",gap:10,alignItems:"flex-start"}}>
+                        <div style={{flex:"0 0 auto"}}>
+                          <div style={{fontSize:10,color:C.textMuted,fontWeight:700,marginBottom:4,textTransform:"uppercase",letterSpacing:.8}}>Cliente</div>
+                          <select value={meta.clientId||""} onChange={e=>updateMeta(m.id,{clientId:e.target.value||null})}
+                            style={{background:C.bg,border:`1px solid ${C.border}`,color:C.text,borderRadius:6,padding:"5px 8px",fontSize:12,fontFamily:"inherit",minWidth:160,cursor:"pointer",outline:"none"}}>
+                            <option value="">— Sin asignar —</option>
+                            {clients.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}
+                          </select>
+                        </div>
+                        <div style={{flex:1,minWidth:0}}>
+                          <div style={{fontSize:10,color:C.textMuted,fontWeight:700,marginBottom:4,textTransform:"uppercase",letterSpacing:.8}}>Minuta / Notas</div>
+                          <textarea value={meta.notes||""} onChange={e=>updateMeta(m.id,{notes:e.target.value})}
+                            placeholder="¿Qué se habló? ¿Próximos pasos? ¿Compromisos adquiridos?..."
+                            rows={3} style={{width:"100%",background:C.bg,border:`1px solid ${C.border}`,borderRadius:6,padding:"8px 10px",color:C.text,fontSize:12,fontFamily:"inherit",resize:"vertical",outline:"none",lineHeight:1.5,boxSizing:"border-box"}} />
+                        </div>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"flex-end",gap:6}}>
+                        <button onClick={()=>setExpandedId(null)} style={{background:C.accentBg,border:`1px solid ${C.accent+"50"}`,color:C.accent,borderRadius:6,padding:"5px 14px",fontSize:11,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>Guardar ✓</button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       }
     </Card>
@@ -722,7 +963,7 @@ function CalendarStrip() {
 }
 
 // ─── DASHBOARD ───────────────────────────────────────────────────────
-function DashboardView({clients,setClients,deals,setTab}) {
+function DashboardView({clients,setClients,deals,setTab,meetingMeta,setMeetingMeta}) {
   const [priorityFilter,setPriorityFilter]=useState("Todas");
   const [sortBy,setSortBy]=useState("priority+date");
 
@@ -810,7 +1051,6 @@ function DashboardView({clients,setClients,deals,setTab}) {
                       <div onClick={e=>e.stopPropagation()}>
                         <DatePickerCell value={todo.date} onChange={v=>updateTodo(todo.clientId,todo.id,{date:v})} />
                       </div>
-                      {dl&&<span style={{fontSize:10,color:dl.color,fontWeight:600,whiteSpace:"nowrap",flexShrink:0,minWidth:48,textAlign:"right"}}>{dl.text}</span>}
                       <div onClick={e=>e.stopPropagation()}><PriorityCell value={todo.priority} onChange={v=>updateTodo(todo.clientId,todo.id,{priority:v})} /></div>
                     </div>
                   </div>
@@ -837,7 +1077,7 @@ function DashboardView({clients,setClients,deals,setTab}) {
           </Card>
         </div>
       </div>
-      <CalendarStrip />
+      <CalendarStrip clients={clients} meetingMeta={meetingMeta} setMeetingMeta={setMeetingMeta} />
     </div>
   );
 }
@@ -903,16 +1143,20 @@ export default function App() {
   const [tab,setTab]=useState("dashboard");
   const [deals,setDeals]=useState(()=>{
     try{
-      if(localStorage.getItem("execos_v")!=="3"){localStorage.removeItem("deals");localStorage.removeItem("clients");localStorage.setItem("execos_v","3");}
+      if(localStorage.getItem("execos_v")!=="4"){localStorage.removeItem("deals");localStorage.removeItem("clients");localStorage.removeItem("meetingMeta");localStorage.setItem("execos_v","4");}
       const s=localStorage.getItem("deals");return s?JSON.parse(s):INITIAL_DEALS;
     }catch{return INITIAL_DEALS;}
   });
   const [clients,setClients]=useState(()=>{
     try{const s=localStorage.getItem("clients");return s?JSON.parse(s):INITIAL_CLIENTS;}catch{return INITIAL_CLIENTS;}
   });
+  const [meetingMeta,setMeetingMeta]=useState(()=>{
+    try{const s=localStorage.getItem("meetingMeta");return s?JSON.parse(s):{};} catch{return {};}
+  });
 
   useEffect(()=>{localStorage.setItem("deals",JSON.stringify(deals));},[deals]);
   useEffect(()=>{localStorage.setItem("clients",JSON.stringify(clients));},[clients]);
+  useEffect(()=>{localStorage.setItem("meetingMeta",JSON.stringify(meetingMeta));},[meetingMeta]);
   const todayLabel=new Date().toLocaleDateString("es-CL",{weekday:"long",day:"numeric",month:"long"});
   return (
     <div style={{fontFamily:"'DM Sans','Helvetica Neue',sans-serif",background:C.bg,minHeight:"100vh",color:C.text}}>
@@ -931,9 +1175,9 @@ export default function App() {
         <div style={{fontSize:12,color:C.textMuted,textTransform:"capitalize"}}>{todayLabel}</div>
       </div>
       <div style={{padding:"24px 32px",maxWidth:1200,margin:"0 auto"}}>
-        {tab==="dashboard"&&<DashboardView clients={clients} setClients={setClients} deals={deals} setTab={setTab} />}
+        {tab==="dashboard"&&<DashboardView clients={clients} setClients={setClients} deals={deals} setTab={setTab} meetingMeta={meetingMeta} setMeetingMeta={setMeetingMeta} />}
         {tab==="pipeline" &&<PipelineView  deals={deals} setDeals={setDeals} onBack={()=>setTab("dashboard")} />}
-        {tab==="clients"  &&<ClientsView   clients={clients} setClients={setClients} deals={deals} onBack={()=>setTab("dashboard")} />}
+        {tab==="clients"  &&<ClientsView   clients={clients} setClients={setClients} deals={deals} onBack={()=>setTab("dashboard")} meetingMeta={meetingMeta} />}
         {tab==="inbox"    &&<InboxView     clients={clients} setClients={setClients} onBack={()=>setTab("dashboard")} />}
       </div>
     </div>
